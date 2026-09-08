@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Utah House Directory — The Weber County Hive</title>
+<style>
+  :root {
+    --cream: #f7f3e8;
+    --cream-dark: #e6f1ee;
+    --teal-dark: #264653;
+    --teal-soft: #3d6470;
+    --turquoise: #2a9d8f;
+    --turquoise-dark: #1f7a6e;
+    --yellow: #e9c46a;
+    --yellow-dark: #b9861f;
+    --coral: #e76f51;
+    --green: #588157;
+    --border: #cfe3de;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background: var(--cream);
+    color: var(--teal-dark);
+    font-family: Georgia, 'Iowan Old Style', 'Times New Roman', serif;
+    line-height: 1.6;
+  }
+  .wrap { max-width: 900px; margin: 0 auto; padding: 0 24px 80px; }
+  header.masthead {
+    background: var(--teal-dark);
+    color: var(--cream);
+    padding: 40px 24px 34px;
+    border-bottom: 6px solid var(--turquoise);
+  }
+  header.masthead .inner { max-width: 900px; margin: 0 auto; }
+  h1.headline { font-size: 2rem; margin: 0 0 10px; font-weight: 700; }
+  p.dek { font-size: 1.05rem; color: var(--cream-dark); font-style: italic; margin: 0; max-width: 640px; }
+
+  .cards { margin-top: 36px; display: flex; flex-direction: column; gap: 18px; }
+  a.card {
+    display: block;
+    background: #fffdf7;
+    border: 1px solid var(--border);
+    border-left: 5px solid var(--turquoise);
+    border-radius: 6px;
+    padding: 20px 24px;
+    text-decoration: none;
+    color: var(--teal-dark);
+    transition: box-shadow 0.15s ease;
+  }
+  a.card:hover { box-shadow: 0 3px 14px rgba(0,0,0,0.08); }
+  a.card.coming-soon {
+    border-left-color: var(--border);
+    opacity: 0.6;
+    pointer-events: none;
+  }
+  .card-district { font-size: 0.82rem; color: var(--turquoise-dark); text-transform: uppercase; letter-spacing: 0.04em; margin-bottom: 4px; }
+  .card-name { font-size: 1.3rem; font-weight: 700; margin-bottom: 4px; }
+  .card-role { font-size: 0.92rem; color: var(--teal-soft); margin-bottom: 10px; }
+  .card-summary { font-size: 0.96rem; margin-bottom: 12px; }
+  .tag-row { display: flex; flex-wrap: wrap; gap: 8px; }
+  .tag {
+    font-size: 0.75rem;
+    font-family: 'Courier New', monospace;
+    background: var(--cream-dark);
+    color: var(--teal-soft);
+    padding: 3px 9px;
+    border-radius: 3px;
+  }
+  .badge-soon {
+    font-size: 0.75rem;
+    font-family: 'Courier New', monospace;
+    color: var(--teal-soft);
+    font-style: italic;
+  }
+
+  footer.site {
+    text-align: center;
+    font-size: 0.82rem;
+    color: var(--teal-soft);
+    margin-top: 60px;
+    padding-top: 20px;
+    border-top: 1px solid var(--border);
+  }
+</style>
+</head>
+<body>
+
+<header class="masthead">
+  <div class="inner">
+    <h1 class="headline">Utah House Directory</h1>
+    <p class="dek">Representative-by-representative profiles: committee seats, voting record, disclosed conflicts, and where their public record and their public messaging line up — or don't.</p>
+  </div>
+</header>
+
+<div class="wrap">
+  <div class="cards" id="cardContainer"></div>
+</div>
+
+<footer class="site">
+  The Weber County Hive · Accountability journalism for Weber County and beyond
+</footer>
+
+<script src="weber-hive-house-data.js?v=1"></script>
+<script>
+  const container = document.getElementById('cardContainer');
+  REPRESENTATIVES.forEach(rep => {
+    const isLive = rep.status === 'live';
+    const el = document.createElement(isLive ? 'a' : 'div');
+    el.className = 'card' + (isLive ? '' : ' coming-soon');
+    if (isLive) el.href = rep.link;
+    el.innerHTML = `
+      <div class="card-district">${rep.district}</div>
+      <div class="card-name">${rep.name}</div>
+      <div class="card-role">${rep.role}</div>
+      <div class="card-summary">${rep.summary}</div>
+      <div class="tag-row">
+        ${rep.tags.map(t => `<span class="tag">${t}</span>`).join('')}
+        ${!isLive ? '<span class="badge-soon">Coming soon</span>' : ''}
+      </div>
+    `;
+    container.appendChild(el);
+  });
+</script>
+
+</body>
+</html>
