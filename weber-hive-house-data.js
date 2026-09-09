@@ -20,9 +20,9 @@ const REPRESENTATIVES = [
     name: "Rep. Kay J. Christofferson",
     district: "House District 53 (Lehi, Utah County)",
     role: "House Transportation Committee Chair",
-    summary: "Chairs the committee with jurisdiction over transportation and vehicle law while serving as VP/President of a heavy civil construction and infrastructure engineering firm — and was the House floor sponsor shepherding a transportation-funding bill through the exact floor session where an unidentified amendment moved a critical tax-increment base-year date.",
-    tags: ["Transportation Chair", "Industry Overlap", "Unresolved Amendment"],
-    status: "coming-soon",
+    summary: "His campaign credits him with a 2026 tax cut, but the bill he actually sponsored for it died at the same midnight deadline that killed seven others. A wide-ranging transit bill he carried passed over organized public opposition. A $16,000 campaign payment to an Election Hive-linked vendor is logged only as \"campaign expense.\"",
+    tags: ["Transportation Chair", "Wayne Harper Network", "Federalism Commission", "Midnight Kill", "Election Hive"],
+    status: "live",
     link: "weber-hive-christofferson.html"
   }
 ];
