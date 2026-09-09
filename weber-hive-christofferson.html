@@ -1,0 +1,547 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Rep. Kay J. Christofferson — Utah House Directory</title>
+<style>
+  :root {
+    --cream: #f7f3e8;
+    --cream-dark: #e6f1ee;
+    --teal-dark: #264653;
+    --teal-soft: #3d6470;
+    --turquoise: #2a9d8f;
+    --turquoise-dark: #1f7a6e;
+    --yellow: #e9c46a;
+    --yellow-dark: #b9861f;
+    --coral: #e76f51;
+    --green: #588157;
+    --border: #cfe3de;
+    --good: #588157;
+    --bad: #e76f51;
+    --mixed: #b9861f;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background: var(--cream);
+    color: var(--teal-dark);
+    font-family: Georgia, 'Iowan Old Style', 'Times New Roman', serif;
+    line-height: 1.65;
+  }
+  .wrap { max-width: 820px; margin: 0 auto; padding: 0 24px 80px; }
+
+  header.masthead {
+    background: var(--teal-dark);
+    color: var(--cream);
+    padding: 40px 24px 34px;
+    border-bottom: 6px solid var(--turquoise);
+  }
+  header.masthead .inner { max-width: 820px; margin: 0 auto; }
+  .back-link { color: var(--turquoise); font-size: 0.85rem; text-decoration: none; }
+  .case-label {
+    display: inline-block;
+    font-family: 'Courier New', monospace;
+    letter-spacing: 0.08em;
+    font-size: 0.78rem;
+    color: var(--turquoise);
+    border: 1px solid var(--turquoise-dark);
+    padding: 3px 10px;
+    border-radius: 3px;
+    margin: 14px 0 16px;
+    text-transform: uppercase;
+  }
+  h1.headline { font-size: 2rem; line-height: 1.2; margin: 0 0 8px; font-weight: 700; }
+  p.subtitle { font-size: 1.05rem; color: var(--cream-dark); margin: 0 0 18px; }
+  p.dek { font-size: 1.1rem; color: var(--cream-dark); font-style: italic; margin: 0 0 18px; max-width: 640px; }
+  .byline-row { display: flex; flex-wrap: wrap; gap: 18px; font-size: 0.85rem; color: var(--cream-dark); border-top: 1px solid rgba(245,240,228,0.2); padding-top: 14px; }
+
+  .connect-tags { display: flex; flex-wrap: wrap; gap: 8px; margin: 16px 0 0; }
+  .connect-tag {
+    font-family: 'Courier New', monospace; font-size: 0.72rem;
+    background: rgba(233,196,106,0.15); color: var(--yellow);
+    border: 1px solid var(--yellow-dark); padding: 3px 10px; border-radius: 12px;
+    text-decoration: none; white-space: nowrap;
+  }
+  .connect-tag::before { content: '⚭ '; }
+
+  .lede { font-size: 1.15rem; margin: 34px 0 8px; }
+  .lede::first-letter { font-size: 3.2rem; float: left; line-height: 0.85; padding-right: 8px; padding-top: 4px; color: var(--turquoise-dark); font-weight: 700; }
+
+  h2.section { margin-top: 46px; font-size: 1.5rem; border-bottom: 3px solid var(--turquoise); padding-bottom: 8px; }
+  h3.subsection { margin-top: 26px; font-size: 1.1rem; color: var(--turquoise-dark); }
+  p { margin: 14px 0; }
+  a { color: var(--turquoise-dark); }
+
+  .box { background: #fffdf7; border: 1px solid var(--border); border-radius: 6px; padding: 18px 22px; margin: 22px 0; }
+  .box.caution { border-color: var(--bad); background: #fbf1ee; }
+  .box.caution .box-label { color: var(--bad); }
+  .box.link-forward { border-color: var(--yellow-dark); background: #fbf3e0; }
+  .box.link-forward .box-label { color: var(--yellow-dark); }
+  .box-label { text-transform: uppercase; letter-spacing: 0.06em; font-size: 0.78rem; font-weight: 700; color: var(--turquoise-dark); margin-bottom: 8px; }
+
+  table.coi { width: 100%; border-collapse: collapse; margin: 16px 0; font-size: 0.92rem; }
+  table.coi th, table.coi td { border: 1px solid var(--border); padding: 8px 10px; text-align: left; vertical-align: top; }
+  table.coi th { background: var(--teal-dark); color: var(--cream); font-weight: 600; }
+  table.coi tr:nth-child(even) td { background: var(--cream-dark); }
+  table.coi td.finding { background: #e9f0e3; font-weight: 700; color: var(--teal-dark); }
+
+  .timeline { margin: 24px 0; }
+  .tl-item { position: relative; padding: 4px 0 22px 26px; border-left: 3px solid var(--turquoise); margin-left: -3px; }
+  .tl-item:last-child { border-left: 3px solid transparent; }
+  .tl-item::before { content: ''; position: absolute; left: -9px; top: 4px; width: 14px; height: 14px; border-radius: 50%; background: var(--cream); border: 3px solid var(--turquoise-dark); }
+  .tl-date { font-family: 'Courier New', monospace; font-weight: 700; color: var(--turquoise-dark); font-size: 0.88rem; }
+  .tl-title { font-weight: 700; margin: 3px 0 4px; }
+  .tl-body { font-size: 0.94rem; color: var(--teal-soft); }
+
+  .grade-wrap { margin: 20px 0; }
+  details.grade-card { background: #fffdf7; border: 1px solid var(--border); border-radius: 6px; margin-bottom: 12px; overflow: hidden; }
+  details.grade-card summary {
+    cursor: pointer; padding: 14px 100px 14px 18px; font-weight: 700;
+    display: flex; justify-content: space-between; align-items: center;
+    list-style: none; position: relative;
+  }
+  details.grade-card summary::-webkit-details-marker { display: none; }
+  details.grade-card summary::after {
+    content: '▸ tap to expand'; position: absolute; right: 16px; top: 50%;
+    transform: translateY(-50%); font-size: 0.72rem; font-weight: 400;
+    font-style: italic; color: var(--turquoise-dark); white-space: nowrap;
+  }
+  details.grade-card[open] summary::after { content: '▾ tap to collapse'; }
+  .grade-pill {
+    font-family: 'Courier New', monospace; font-size: 0.82rem; font-weight: 700;
+    padding: 2px 11px; border-radius: 3px; color: #fff; margin-left: 10px;
+  }
+  .grade-card-body { padding: 0 18px 16px; font-size: 0.94rem; }
+  .grade-card-body .row { margin-bottom: 8px; }
+  .grade-card-body .row b { color: var(--turquoise-dark); }
+  .grade-card-body .row.fix {
+    margin-top: 14px; background: #eaf1e5; border: 1px solid var(--green);
+    border-left: 4px solid var(--green); border-radius: 4px;
+    padding: 12px 14px 12px 40px; position: relative;
+  }
+  .grade-card-body .row.fix::before {
+    content: '✓'; position: absolute; left: 12px; top: 12px; width: 20px; height: 20px;
+    background: var(--green); color: #fff; border-radius: 50%; font-size: 0.75rem;
+    font-weight: 700; display: flex; align-items: center; justify-content: center;
+  }
+  .grade-card-body .row.fix b {
+    color: var(--green); text-transform: uppercase; font-size: 0.78rem;
+    letter-spacing: 0.03em; display: block; margin-bottom: 4px;
+  }
+  .rubric-intro { font-size: 0.95rem; color: var(--teal-soft); margin-bottom: 18px; }
+
+  .flip-card { background: #fffdf7; border: 1px solid var(--bad); border-radius: 6px; margin: 14px 0; overflow: hidden; }
+  .flip-card summary {
+    cursor: pointer; padding: 14px 100px 14px 18px; font-weight: 700; color: var(--bad);
+    list-style: none; position: relative; font-size: 0.95rem;
+  }
+  .flip-card summary::-webkit-details-marker { display: none; }
+  .flip-card summary::after {
+    content: '▸ tap to see what the record shows'; position: absolute; right: 16px; top: 50%;
+    transform: translateY(-50%); font-size: 0.72rem; font-weight: 400;
+    font-style: italic; color: var(--teal-soft); white-space: nowrap;
+  }
+  .flip-card[open] summary::after { content: '▾ collapse'; }
+  .flip-card .flip-back {
+    padding: 4px 18px 16px; font-size: 0.94rem; border-top: 1px dashed var(--border);
+  }
+  .flip-back .flip-label {
+    text-transform: uppercase; letter-spacing: 0.06em; font-size: 0.75rem; font-weight: 700;
+    color: var(--turquoise-dark); display: block; margin: 12px 0 6px;
+  }
+
+  details.sources { margin-top: 40px; border-top: 2px solid var(--teal-dark); padding-top: 12px; }
+  details.sources summary { cursor: pointer; font-weight: 700; color: var(--turquoise-dark); font-size: 0.95rem; }
+  details.sources ol { font-size: 0.9rem; color: var(--teal-soft); padding-left: 20px; }
+  details.sources li { margin-bottom: 8px; }
+
+  details.glossary { background: #fffdf7; border: 1px solid var(--border); border-radius: 6px; margin: 16px 0; }
+  details.glossary summary { cursor: pointer; font-weight: 700; color: var(--turquoise-dark); padding: 12px 16px; font-size: 0.92rem; }
+  details.glossary dl { padding: 0 20px 16px; margin: 0; font-size: 0.92rem; }
+  details.glossary dt { font-weight: 700; color: var(--teal-dark); margin-top: 10px; }
+  details.glossary dd { margin: 4px 0 0; color: var(--teal-soft); }
+
+  footer.site { text-align: center; font-size: 0.82rem; color: var(--teal-soft); margin-top: 60px; padding-top: 20px; border-top: 1px solid var(--border); }
+
+  @media (max-width: 600px) { h1.headline { font-size: 1.5rem; } }
+</style>
+</head>
+<body>
+
+<header class="masthead">
+  <div class="inner">
+    <a href="weber-hive-house-directory.html" class="back-link">&larr; Utah House Directory</a>
+    <div class="case-label">House District 53 · Profile</div>
+    <h1 class="headline">Rep. Kay J. Christofferson</h1>
+    <p class="subtitle">House Transportation Committee Chair · Civil Engineer (self-employed, per his own current COI disclosure)</p>
+    <p class="dek">His campaign credits him with a 2026 tax cut — but the specific bill he sponsored for it never passed, killed at the same midnight deadline that ended seven other bills. He chaired the House side of the session's most contested transit bill, which passed over organized public opposition.</p>
+    <div class="byline-row">
+      <span>The Weber County Hive</span>
+      <span>Lehi, Utah County</span>
+      <span>In office since January 2013</span>
+    </div>
+    <div class="connect-tags">
+      <a class="connect-tag" href="weber-hive-house-directory.html?tag=Wayne%20Harper%20Network">Wayne Harper Network</a>
+      <a class="connect-tag" href="weber-hive-house-directory.html?tag=Federalism%20Commission">Federalism Commission</a>
+    </div>
+  </div>
+</header>
+
+<div class="wrap">
+
+  <p class="lede">Kay Christofferson has served House District 53 since 2013 and chairs the House Transportation Committee. Three things stand out in his record: his campaign takes credit for a 2026 tax cut, but the bill he actually sponsored for it never passed, killed by the same midnight procedural mechanism that ended seven other bills that session; a wide-ranging transit bill he carried passed over organized public opposition; and a campaign narrative about his engineering career that his own signed disclosure forms don't fully support.</p>
+
+  <h2 class="section">The Basics</h2>
+  <table class="coi">
+    <tr><th>Office</th><td>Utah House District 53 (Lehi, Utah County). In office since January 2013 — represented District 56 until the 2023 redistricting renumbered his seat to District 53. His campaign website (christofferson56.com) still uses the old district number in its branding and domain name.</td></tr>
+    <tr><th>Profession</th><td>Civil Engineer. B.S. Civil Engineering, Brigham Young University. Member, American Society of Civil Engineers. His own COI disclosures (2018, 2022, and current) all list him as "Self Employed" — "owner/manager of Christofferson Engineering." His official le.utah.gov bio separately lists "Horrocks Engineers" under Profession and, in a different sentence, says he "worked... as a Vice President and President of several companies" without naming which ones — the page does not actually connect those two into a single "VP/President of Horrocks" claim, which is how it was originally summarized here.</td></tr>
+    <tr><th>2026 Committees</th><td>House Transportation Committee (Chair); House Revenue and Taxation Committee; Federalism Commission; Public Utilities, Energy & Technology Interim Committee; Retirement and Independent Entities Interim Committee; Transportation and Infrastructure Appropriations Subcommittee; Transportation Interim Committee.</td></tr>
+    <tr><th>Personal</th><td>Married to Suzanne; seven children (his own upbringing was in a family of 7, hers a family of 9); sixteen grandchildren. Eagle Scout.</td></tr>
+  </table>
+
+  <h2 class="section">The Horrocks Engineers Question</h2>
+  <p>Christofferson chairs House Transportation and has a background in civil engineering. His campaign materials describe project work matching a Horrocks Engineers contract. Four of his own dated disclosure forms, laid out below, show he was not affiliated with Horrocks during the years that project was built.</p>
+
+  <table class="coi">
+    <tr><th>Year</th><th>What his own disclosure says</th></tr>
+    <tr><td>2016</td><td class="finding">Employer: Horrocks Engineers. Title: Civil Engineer. "Design and project management of civil construction projects." (Genuine, signed, dated form.)</td></tr>
+    <tr><td>2018</td><td>Employer: Self-employed, owner/manager of Christofferson Engineering. No mention of Horrocks.</td></tr>
+    <tr><td>2022</td><td>Same as 2018 — self-employed, no Horrocks mention.</td></tr>
+    <tr><td>Current</td><td>Same as 2018/2022 — self-employed, no Horrocks mention.</td></tr>
+  </table>
+
+  <div class="box">
+    <div class="box-label">What this timeline actually supports</div>
+    <p style="margin:0;">He genuinely worked at Horrocks in 2015&ndash;2016. He was self-employed by 2018. Horrocks' own company blog confirms it held the "I-15 Tech Corridor" contract (Triumph Boulevard, a frontage road system, interchange redesigns) &mdash; a project outlined in 2018 and largely completed by 2020. Christofferson's campaign site separately claims credit for accelerating funding on a project described in nearly identical terms. <strong>The plain reading: by the time that project was actually being built, he was no longer a Horrocks employee.</strong> That rules out the strongest version of this finding &mdash; "he personally profited as a Horrocks officer on the exact project he championed." It does not rule out a narrower one: his own firm, Christofferson Engineering, could have been hired as an outside consultant or subcontractor on that same project. Leaving a company as an employee and later working for it as a paid consultant are two different things, and nothing in his disclosure forms distinguishes between them.</p>
+  </div>
+
+  <div class="box caution">
+    <div class="box-label">Questions worth asking him directly</div>
+    <p style="margin:0 0 10px;">His tax returns aren't public record, and his COI disclosures don't itemize client work, so these can't be answered from documents alone:</p>
+    <ul style="margin:0 0 10px; padding-left: 20px;">
+      <li>Has Christofferson Engineering, PLLC ever done consulting or subcontract work connected to Horrocks or to the I-15 Tech Corridor project specifically?</li>
+      <li>Does his firm have any current relationship to Horrocks' ongoing Mountain View Corridor contract — the other project he's personally claimed credit for?</li>
+    </ul>
+    <p style="margin:0;">"Self-employed" doesn't rule either out, and nothing in the public record answers them either way.</p>
+  </div>
+
+  <h3 class="subsection">His Full Disclosed Business Holdings</h3>
+  <p>His COI form discloses six active entities by name — considerably more thorough than the disclosure gaps documented elsewhere in this project:</p>
+  <table class="coi">
+    <tr><th>Entity</th><th>Stated Purpose</th><th>His Role</th></tr>
+    <tr><td class="finding">Christofferson Engineering, PLLC</td><td class="finding">Engineering and consulting</td><td class="finding">Member/manager — his stated current occupation</td></tr>
+    <tr><td>KIO Investments, LLC</td><td>Rental property maintenance and management</td><td>Member/manager</td></tr>
+    <tr><td>Lake Terrace 1235, LLC</td><td>Rental property maintenance and management</td><td>Member/manager</td></tr>
+    <tr><td>Duncan 528, LLC</td><td>Rental property maintenance and management</td><td>Member/manager</td></tr>
+    <tr><td>D4 Holdings, LLC</td><td>Rental property maintenance and management</td><td>Member/manager</td></tr>
+    <tr><td>Second Estate on Lake Powell, LLC</td><td>Owner/user of a houseboat</td><td>Member</td></tr>
+  </table>
+  <p style="font-size:0.92rem; color: var(--teal-soft);">His form's optional Item 6 (real property that may be a conflict) says "none" for all of these — no property addresses appear anywhere. Whether any hold property near the I-15 Lehi corridor is unconfirmed and would need a separate property-records search.</p>
+
+  <div class="box caution">
+    <div class="box-label">Why is ACEC Utah funding him, and who leads it?</div>
+    <p style="margin:0;">Regardless of the I-15 timing question: his own trade association, ACEC Utah (the Utah chapter of the American Council of Engineering Companies), donates $3,000 combined directly to his campaign — a confirmed industry-funding relationship, separate from any specific project. ACEC Utah's own board of directors page names two Horrocks Engineers employees in leadership roles: Mary Hargis as President and Ron Mortimer as National Director. The trade association funding him is itself partly led by Horrocks. His 2016 disclosure also shows personal income from Clyde Companies — a large, privately held Utah construction and building-materials conglomerate based in Orem — via stock redemption, the same company that separately donates to his campaign.</p>
+  </div>
+
+  <div class="box link-forward">
+    <div class="box-label">Public messaging vs. record</div>
+    <p style="margin:0;">His own campaign platform touts his Transportation Chair role as delivering good policy "that keep our families and economy moving," and cites service on a state transportation-funding task force — while, on a different page, describing the I-15 Lehi acceleration in detail — without mentioning his own current engineering practice anywhere on either page.</p>
+  </div>
+
+  <h3 class="subsection">Two more board seats, newly confirmed</h3>
+  <p>His COI form also lists two volunteer board memberships not found in any other source used for this profile:</p>
+
+  <details class="glossary">
+    <summary>CommonSpirit and Beehive Energy Alliance — what they are, and why it matters</summary>
+    <dl>
+      <dt>CommonSpirit</dt>
+      <dd>A large nonprofit Catholic hospital system, one of the largest in the U.S., formed from a 2019 merger of Catholic Health Initiatives and Dignity Health. He doesn't sit on a health-focused committee, so there's no clear legislative overlap here — just a sizable healthcare employer he's connected to.</dd>
+      <dt>Beehive Energy Alliance</dt>
+      <dd>A Utah nonprofit, founded around 2024, whose own materials describe its mission as uniting "industry leaders, policymakers, and community stakeholders" in the energy sector to shape infrastructure and policy.</dd>
+      <dt>Why it matters</dt>
+      <dd>Christofferson sits on the Public Utilities, Energy, and Technology Committee — the exact committee that handles the policy area Beehive Energy Alliance exists to influence. Same category of industry/committee overlap already documented for Transportation, in a different field.</dd>
+    </dl>
+  </details>
+
+
+  <h3 class="subsection">A second, current instance of the same pattern</h3>
+  <p>His campaign's "Transportation & Infrastructure" page also touts a "$1.4 Billion Northwest Utah County" investment — "the 2100 North freeway connection linking Mountain View Corridor to I-15" — as a close-to-home accomplishment. Horrocks Engineers' own company blog names Horrocks as the current Program Manager for that exact project, scheduled for completion in 2026. This project is ongoing now, unlike the 2018–2020 project above. Since he's been self-employed since well before this project started, there's no confirmed financial relationship here either — but it's the second time he's personally claimed credit for a project that happens to be a Horrocks contract, worth flagging as a pattern of language rather than a one-off.</p>
+
+  <h3 class="subsection">Additional committee history and a defunct board</h3>
+  <p>Also confirmed from his own campaign site, two additional items:</p>
+
+  <details class="glossary">
+    <summary>Infrastructure and General Government Appropriations Subcommittee</summary>
+    <dl>
+      <dt>What it is</dt>
+      <dd>A previously undocumented committee assignment — one term, "funding State buildings and roads," per his own description.</dd>
+    </dl>
+  </details>
+
+  <details class="glossary">
+    <summary>Free Market Protection and Privatization Board (defunct)</summary>
+    <dl>
+      <dt>What it was</dt>
+      <dd>A now-defunct body Christofferson once chaired, discontinued in the 2019 General Session. He describes its purpose as providing "a venue and an opportunity to discuss encroachments of the government into private businesses" and promoting "private solutions to government services."</dd>
+      <dt>His own words</dt>
+      <dd>"Government should not be in the business of competing with private enterprise."</dd>
+    </dl>
+  </details>
+
+
+  <div class="box">
+    <div class="box-label">His own words on the Federalism Commission</div>
+    <p style="margin:0;">"When the Constitution was created it defined a few limited powers of the Federal... Government. The remaining powers where reserved to the States, or the People. Over the years, the Federal Government has encroached into the business of the State... This is an overreach that must be corrected." He describes the Commission as working with Utah's federal delegation, preparing land management plans, and pushing to increase Payment in Lieu of Taxes (PILT) funding to compensate for "67% of our land under Federal Government control." This reinforces the national conservative policy-network funding thread already documented below (ALEC, Citizens for Self Governance, Howard S. Rich TTEE).</p>
+  </div>
+
+  <h2 class="section">The Unresolved Amendment</h2>
+  <p>S.B. 197, "Transportation Funding and Governance Amendments," rewrites the core statute (59-12-103) governing sales-tax increment distribution for every major tax-increment tool in this project's coverage — HTRZ, RDA, UFAIR, and the Point of the Mountain Authority. Christofferson was the House floor sponsor shepherding it through the House.</p>
+
+  <details class="glossary">
+    <summary>What HTRZ, RDA, and UFAIR mean — and why they're here</summary>
+    <dl>
+      <dt>HTRZ — Housing and Transit Reinvestment Zone</dt>
+      <dd>A Utah program that lets a designated zone near a transit station capture a share of the growth in sales tax revenue generated there, using that money to fund infrastructure and housing rather than sending it to the state's general fund.</dd>
+      <dt>RDA — (Community) Redevelopment Agency</dt>
+      <dd>A local tax-increment financing tool that captures the growth in property or sales tax revenue within a designated redevelopment area to pay for improvements inside that same area.</dd>
+      <dt>UFAIR — Utah Fairpark Area Investment and Restoration District</dt>
+      <dd>Created by H.B. 562 in the 2024 legislative session, this district captures tax increment to fund restoration, preservation, and economic development around the Utah Fairpark area in Salt Lake City.</dd>
+      <dt>Why it matters here</dt>
+      <dd>All three tools work the same basic way: instead of new tax revenue in a growing area going to the state or county's general fund, it gets redirected to pay for projects inside that same zone. S.B. 197 amends the one statute that governs how that redirected money gets divided up statewide — so a change to it doesn't just affect one zone or one project, it changes the math for every HTRZ, RDA, and UFAIR district in Utah at once. That's why the unrecorded base-year amendment below is a bigger deal than a routine transportation bill tweak.</dd>
+    </dl>
+  </details>
+
+  <div class="box caution">
+    <div class="box-label">Does this square with his own campaign promises?</div>
+    <p style="margin:0 0 14px;">Two separate campaign pages are worth holding up against this bill:</p>
+
+    <details class="flip-card">
+      <summary>"Keeping Utah Affordable" — cutting taxes, putting money back in your pocket</summary>
+      <div class="flip-back">
+        <span class="flip-label">What the record shows</span>
+        HTRZ, RDA, and UFAIR all work by redirecting the <em>growth</em> in sales tax revenue away from general government funds — the same pool that pays for schools, counties, and public services, or that could otherwise fund broader tax relief — into specific development zones instead. That's not a tax increase, but it is a different use of new tax dollars than his tax-cut messaging emphasizes, and his campaign materials don't mention this side of his tax-related work.
+      </div>
+    </details>
+
+    <details class="flip-card">
+      <summary>"Limited & Accountable Government" — transparent, understandable, accountable</summary>
+      <div class="flip-back">
+        <span class="flip-label">What the record shows</span>
+        S.B. 197's base-year amendment — a change to how that redirected revenue gets divided up across every HTRZ, RDA, and UFAIR district in Utah — happened via an anonymous voice vote with no named mover, on a bill Christofferson personally floor-sponsored.
+      </div>
+    </details>
+
+    <p style="margin:14px 0 0;">Whether either of these squares with the standard his own platform sets is a fair question to ask him directly.</p>
+  </div>
+
+  <div class="box">
+    <div class="box-label">What "Wayne Harper Network" means</div>
+    <p style="margin:0;">Sen. Wayne Harper chairs the Senate Transportation, Public Utilities, Energy, and Technology Committee and has personally chief-sponsored the state's tax-increment tools across five legislative sessions — S.B. 140 (2022), S.B. 84 (2023), S.B. 268 (2024), and four more in 2026 alone (S.B. 197, S.B. 221, S.B. 228, S.B. 39). Christofferson has floor-sponsored four of Harper's bills in a single session (S.B. 197, S.B. 242, S.B. 237, S.B. 36), and Harper has reciprocally floor-sponsored two of Christofferson's own bills. The tag on this page groups every legislator this project has documented in that same repeated sponsor pairing, so a reader can trace the pattern across profiles rather than encountering each instance in isolation.</p>
+  </div>
+
+  <div class="timeline">
+    <div class="tl-item">
+      <div class="tl-date">2026 Session</div>
+      <div class="tl-title">S.B. 197 moves through the House with Christofferson as floor sponsor</div>
+      <div class="tl-body">Sen. Wayne Harper's bill; Christofferson personally floor-sponsored it plus three more Harper Senate transportation bills the same session (S.B. 242, S.B. 237, S.B. 36) — a repeated, not one-off, House-Senate sponsor pairing.</div>
+    </div>
+    <div class="tl-item">
+      <div class="tl-date">March 6, 2026</div>
+      <div class="tl-title">House Amendment 2 moves the fund's base year — two years later</div>
+      <div class="tl-body">The amendment shifted the fund's base year from July 1, 2025 to July 1, 2027, and the trigger year from 2027 to 2028. It happened on the House floor via voice vote while Christofferson was shepherding the bill through. The mover's identity does not appear in the bill's status-table record.</div>
+    </div>
+  </div>
+
+  <div class="box caution">
+    <div class="box-label">Who moved this amendment?</div>
+    <p style="margin:0;">Christofferson was the House floor sponsor for the entire period this amendment happened — making him the strongest lead yet toward identifying who moved or supported the change. That said, this specific question is likely unanswerable from public records: a written House Journal exists for the session, but the site blocks automated access to it, and no other written record has turned up a name. Barring someone reading that journal directly, who moved this amendment stays unknown.</p>
+  </div>
+
+  <h2 class="section">H.B. 57 (2026) — Three Confirmed Financial Connections</h2>
+  <p>Christofferson chief-sponsored H.B. 57, "Motor Vehicle Division Amendments" (floor sponsor Wayne A. Harper), which was signed into law. This bill drew a parallel to H.B. 22's pattern — three named entities: Maverik, Clyde Companies, and Lincoln Hill Partners.</p>
+
+  <div class="box caution">
+    <div class="box-label">What did the $16,000 to Gathering Inc. actually buy?</div>
+    <p style="margin:0;">Full 2018&ndash;2026 campaign finance data confirms all three entities named in the original flag: <strong>Maverik</strong> is a recurring donor ($1,250 combined across multiple years, not a single instance); <strong>Clyde Companies</strong> is both a donor and, per his 2016 disclosure, a personal stock-redemption income source. The strongest piece is new: Christofferson's campaign paid <strong>$16,000 to "Gathering Inc."</strong> — $7,500 in 2020 and $8,500 in 2022, both listed only as "campaign expense," with no further detail. Gathering Inc. is an entity already tied to Casey Hill in this project's Election Hive/Lincoln Hill research — a registered lobbyist and Lincoln Hill PAC co-founder. This is money flowing <em>out</em> of the campaign to a network-connected vendor, not a donation coming in. What that $16,000 actually purchased isn't disclosed anywhere in the public record.</p>
+  </div>
+
+  <h2 class="section">S.B. 242 — "The Session's Most Wide-Ranging Transit Bill"</h2>
+  <p>Christofferson carried this in the House; Wayne Harper chief-sponsored it in the Senate. The Utah House's own 2026 recap article calls it the session's most wide-ranging transit bill. It went through at least four substitutes and was signed into law.</p>
+
+  <table class="coi">
+    <tr><th>Provision</th><th>Detail</th></tr>
+    <tr><td>Commercial EV road usage charge</td><td>Vehicles over 6,000 lbs pay a road usage charge with a higher cap</td></tr>
+    <tr><td class="finding">Ends EVs' HOV lane access</td><td class="finding">Attributed to Christofferson by name in the House's own article — tied to an expired federal policy</td></tr>
+    <tr><td class="finding">Corridor preservation funding</td><td class="finding">Attributed to Christofferson by name — routes funding directly from the state to local governments</td></tr>
+    <tr><td>UDOT exemptions</td><td>Exempted from certain real-property conveyance rules; sales tax exemption on transit construction materials</td></tr>
+    <tr><td>FrontRunner land use</td><td>Clarifies rules near stations to speed the double-tracking project</td></tr>
+    <tr><td>Later rider (S04)</td><td>Adds a mobile-business street-closure provision and a real-property deed clause — neither obviously belongs in a transportation bill</td></tr>
+  </table>
+
+  <div class="box caution">
+    <div class="box-label">Why did this bill pass despite organized opposition?</div>
+    <p style="margin:0;">At the Senate committee hearing, a coalition testified against this bill: Dave Iltis (President, Cycling Utah), Julia Lyon (President, Wasatch Elementary PTA), Julian Jurkoic (Treasurer, Sweet Streets Salt Lake City), and at least six named residents. Only one witness — a Salt Lake City Council Member — spoke in favor. The bill passed anyway. On the floor, opposition wasn't purely partisan: the House vote (55&ndash;14&ndash;6) saw four Republicans cross over (Abbott, Gwynn, Ward, Welton), and the Senate's final concurrence vote (18&ndash;9&ndash;2) mixed Democratic and Republican Nays.</p>
+  </div>
+
+  <h2 class="section">H.B. 235 — His Own Bill, Killed the Same Way as the Others</h2>
+  <p>Christofferson chief-sponsored H.B. 235, "Income Tax Revisions" (floor sponsor Brady Brammer) — the bill that would have cut Utah's income and corporate tax rate from 4.50% to 4.45%. It's the exact cut his own "Keeping Utah Affordable" campaign page credits "the Legislature" with achieving in 2026.</p>
+
+  <div class="timeline">
+    <div class="tl-item">
+      <div class="tl-date">3/3/2026</div>
+      <div class="tl-title">Passes the House, 55&ndash;14&ndash;6</div>
+      <div class="tl-body">All 14 Nays appear to be Democrats — not a rubber stamp.</div>
+    </div>
+    <div class="tl-item">
+      <div class="tl-date">3/4/2026</div>
+      <div class="tl-title">Passes Senate Revenue &amp; Taxation Committee, 4&ndash;0</div>
+      <div class="tl-body">Christofferson presented it himself. Billy Hesterman, President of the Utah Taxpayers Association, testified in favor — no opposition recorded. That's the same Utah Taxpayers Association whose savings estimate Christofferson cites by name on his own campaign page.</div>
+    </div>
+    <div class="tl-item">
+      <div class="tl-date">3/6/2026, 11:59 PM</div>
+      <div class="tl-title">Killed — "Senate/ strike enacting clause"</div>
+      <div class="tl-body">After sitting in Senate Rules with no further floor action scheduled, the bill was struck at 11:59 PM — the exact same mechanism, the exact same night, as H.B. 332, H.B. 422, H.B. 468, H.B. 286, H.B. 349, H.B. 167, and S.B. 318.</div>
+    </div>
+  </div>
+
+  <div class="box caution">
+    <div class="box-label">Why does his campaign page credit "the Legislature" instead of his own bill?</div>
+    <p style="margin:0;">His "Keeping Utah Affordable" page credits "the Legislature" with the 2026 rate cut, naming no bill number. It doesn't mention that his own bill for that exact cut died. A reader would have no way of knowing, from the page itself, that the cut he's taking credit for actually happened through a different vehicle after his own attempt was killed at the same midnight cutoff that ended seven other bills.</p>
+  </div>
+
+  <h2 class="section">Co-Sponsorships — Ties Into Other Tracked Networks</h2>
+  <p>Several of his 2026 co-sponsorships connect to threads already documented elsewhere in this project:</p>
+  <table class="coi">
+    <tr><th>Bill</th><th>Chief Sponsor / Floor Sponsor</th><th>Connection</th></tr>
+    <tr><td>H.B. 195, Precious Metals Amendments</td><td>Ken Ivory / Keith Grover</td><td>Part of Ivory's nuclear/extraction bill family (H.B. 78/H.B. 546)</td></tr>
+    <tr><td>H.B. 85, State Sovereignty Amendments</td><td>Lisa Shepherd / Ronald M. Winterton</td><td>Same "sovereignty" theme as S.B. 57/H.B. 379, though a separate bill — see the Teuscher profile for this bill's actual floor vote and outcome</td></tr>
+    <tr><td>H.B. 209, Voting Amendments</td><td>A. Cory Maloy / Ronald M. Winterton</td><td>Signed into law</td></tr>
+  </table>
+
+  <h2 class="section">Campaign Finance — Full Itemized History, 2018-2026</h2>
+  <p>Total contributions: <strong>$205,861.68</strong> across 258 transactions; total expenditures: <strong>$159,783.92</strong> across 499 transactions. Records only go back to 2018. Of 34 total deletions across that period, 9 fall in 2023&ndash;2026 (4 in 2023, 3 in 2024, 2 in 2025). Deleted entries show $0 with no name, so what was deleted isn't recoverable, only that it happened.</p>
+  <table class="coi">
+    <tr><th>Donor / Vendor</th><th>Amount</th><th>Note</th></tr>
+    <tr><td class="finding">"Gathering Inc." (expenditure)</td><td class="finding">$16,000</td><td class="finding">$7,500 (2020) + $8,500 (2022), both listed only as "campaign expense." Tied to Casey Hill's Election Hive/Lincoln Hill network elsewhere in this project — money flowing out to a network vendor, not a donation in. What it purchased is not disclosed.</td></tr>
+    <tr><td>Clyde Companies Inc.</td><td>$13,000 combined</td><td>A large, privately held Utah construction and building-materials conglomerate. Same donor confirmed giving to Ipson, Thurston, and Balderree elsewhere in this project. ALSO: his 2016 COI form discloses personal income &ge;$5,000 from Clyde Companies via "stock redemption" — a direct personal financial relationship, not just a donor-only one.</td></tr>
+    <tr><td>Utah Association of Realtors (both entities)</td><td>$11,500 combined</td><td>His largest institutional donor family</td></tr>
+    <tr><td>Utah House Republican Committee PAC</td><td>$5,000</td><td></td></tr>
+    <tr><td class="finding">Utah Taxpayers Association</td><td class="finding">$3,500</td><td class="finding">Three-way connection: direct donor, its President testified in favor of his H.B. 235, and Christofferson cites its savings figures by name on his own campaign page</td></tr>
+    <tr><td>NCSL</td><td>$3,250 combined</td><td>National Conference of State Legislatures — mainstream, nonpartisan</td></tr>
+    <tr><td>ACEC Utah</td><td>$3,000 combined</td><td>The Utah chapter of the American Council of Engineering Companies — his own industry's trade association</td></tr>
+    <tr><td>Utah Trucking Association</td><td>$2,500</td><td></td></tr>
+    <tr><td>Central Utah GOP House PAC + Utah County Legislative PAC</td><td>$2,000</td><td>Tied to the NUPAC/Millner network</td></tr>
+    <tr><td class="finding">HNTB Holdings Ltd. PAC</td><td class="finding">$1,250 combined</td><td class="finding">A transportation engineering firm — Horrocks' own partner on the I-15 CORE Program Management project, per Horrocks' company blog</td></tr>
+    <tr><td class="finding">Maverik Inc.</td><td class="finding">$1,250 combined, multiple years</td><td class="finding">A recurring donor, not the single 2025 instance first found — strengthens the H.B. 57 connection above</td></tr>
+    <tr><td class="finding">Citizens for Self Governance</td><td class="finding">$1,194.64</td><td class="finding">National conservative group central to the Article V constitutional-convention movement — one of four data points (with his Federalism Commission seat, the Howard Rich donation below, and his own platform page citing the ALEC-Laffer Rich States/Poor States index by name) tying him to the national conservative policy-network family</td></tr>
+    <tr><td>Western Metals Recycling</td><td>$1,900 combined</td><td>Metals-industry network</td></tr>
+    <tr><td class="finding">Howard S. Rich TTEE</td><td class="finding">$500</td><td class="finding">Same national libertarian federalism funder confirmed giving to Ronald Winterton's SB 57 network, Calvin Musselman, and Jason Kyle</td></tr>
+    <tr><td>"Hartley Hartley and Hughes"</td><td>$500</td><td>Surname matches the Hartley brothers of H3 PAC/Sage Government Solutions, but this reads as a law firm name — NOT confirmed as the same Hartleys. Address confirmed: 52 East 300 North, Salt Lake City.</td></tr>
+    <tr><td>Family self-funding (Kay + Suzanne Christofferson)</td><td>$7,822.86 combined</td><td>Across name variants, 2018-2026</td></tr>
+  </table>
+
+  <h2 class="section">Graded Against the Rubric</h2>
+  <p class="rubric-intro">Every finding on this page is graded the same five ways used across all Weber County Hive coverage: <b>Power</b>, <b>Transparency</b>, <b>Financial accountability</b>, <b>Environmental impact</b>, and <b>Community impact</b>.</p>
+
+  <div class="grade-wrap">
+    <details class="grade-card">
+      <summary>S.B. 197's unrecorded base-year amendment <span class="grade-pill" style="background:var(--coral);">D</span></summary>
+      <div class="grade-card-body">
+        <div class="row"><b>Power —</b> A two-year delay to a fund's base and trigger year is a substantive change to how and when tax-increment revenue gets captured — decided by voice vote with no name attached, while the bill's own House floor sponsor was Christofferson.</div>
+        <div class="row"><b>Transparency —</b> Bad. The status-table record of this bill does not show who moved the amendment. A change this specific to a statewide tax mechanism deserves a named mover on the record.</div>
+        <div class="row"><b>Financial accountability —</b> Bad. This statute underlies every major TIF-style tool in this project's coverage; a two-year delay to its base year affects when public entities start seeing, or not seeing, revenue.</div>
+        <div class="row"><b>Environmental impact —</b> Not applicable.</div>
+        <div class="row"><b>Community impact —</b> Bad. Residents and taxing entities affected by HTRZ, RDA, UFAIR, and Point of the Mountain financing have no way to know from the public record who decided to push this timeline back.</div>
+        <div class="row fix"><b>How This Could Have Served the Collective Better</b>As the bill's floor sponsor, Christofferson was in the room. A voice vote doesn't preclude naming who proposed an amendment in the sponsor's own summary of the bill's changes when presenting it — that's a choice available regardless of how the vote itself was conducted.</div>
+      </div>
+    </details>
+
+    <details class="grade-card">
+      <summary>S.B. 242 — passed over real, organized public opposition <span class="grade-pill" style="background:var(--yellow-dark);">C</span></summary>
+      <div class="grade-card-body">
+        <div class="row"><b>Power —</b> Mixed. Some provisions genuinely streamline transit funding and infrastructure delivery; the mobile-business and deed-conveyance riders added late in the process don't obviously belong in a transportation bill and got far less scrutiny as a result.</div>
+        <div class="row"><b>Transparency —</b> Good, on balance. Unlike the S.B. 197 amendment, this bill's committee process included real, named, public testimony on both sides — the record of who supported and opposed it, and why, is actually there to check.</div>
+        <div class="row"><b>Financial accountability —</b> Mixed. Corridor preservation funding now flows more directly to local governments, which the bill's authors frame as removing delay — but the local-option sales tax changes and the late-added riders haven't been independently assessed for who bears the cost.</div>
+        <div class="row"><b>Environmental impact —</b> Not applicable.</div>
+        <div class="row"><b>Community impact —</b> Bad. A coalition of bike/pedestrian-safety and neighborhood advocates — Cycling Utah, a PTA, a complete-streets group — testified against this bill and lost. Their specific objections weren't addressed in the final text as far as the record shows.</div>
+        <div class="row fix"><b>How This Could Have Served the Collective Better</b>Separating the late-added, unrelated riders (mobile business rules, the deed provision) into their own bills would have let each get proper public scrutiny instead of riding through on a "wide-ranging" transit bill's momentum.</div>
+      </div>
+    </details>
+
+    <details class="grade-card">
+      <summary>H.B. 235 — his own bill, killed the same way as seven others <span class="grade-pill" style="background:var(--coral);">D</span></summary>
+      <div class="grade-card-body">
+        <div class="row"><b>Power —</b> Bad. A bill with real, recorded bipartisan-adjacent support at every stage — House floor, Senate committee — was killed by a procedural mechanism at the last possible moment, with no debate or explanation on the record.</div>
+        <div class="row"><b>Transparency —</b> Bad. The kill mechanism itself (enacting-clause strike) requires no floor debate and no stated reason — voters have no way to know why a bill with this much support didn't become law.</div>
+        <div class="row"><b>Financial accountability —</b> Mixed. The tax cut itself happened anyway through an unnamed alternate vehicle — but Christofferson's own campaign materials never disclose that his personal bill for it failed, crediting "the Legislature" generally instead.</div>
+        <div class="row"><b>Environmental impact —</b> Not applicable.</div>
+        <div class="row"><b>Community impact —</b> Mixed. Utah taxpayers got the rate cut regardless of this bill's fate, so the practical outcome for most residents is the same — the concern here is about accurate credit-taking, not a lost benefit.</div>
+        <div class="row fix"><b>How This Could Have Served the Collective Better</b>A campaign page taking credit for a policy outcome could simply say which specific bill delivered it — if that wasn't his own H.B. 235, saying so plainly would cost nothing and would be more accurate than crediting "the Legislature" in the abstract.</div>
+      </div>
+    </details>
+
+    <details class="grade-card">
+      <summary>H.B. 57 and the $16,000 to Gathering Inc. <span class="grade-pill" style="background:var(--yellow-dark);">C</span></summary>
+      <div class="grade-card-body">
+        <div class="row"><b>Power —</b> Mixed. A chief sponsor whose campaign paid $16,000 to a vendor connected to the Election Hive/Lincoln Hill network is worth scrutiny, but bill sponsorship and vendor payment are two separate acts — this shows a financial relationship, not proof the bill itself was shaped by it.</div>
+        <div class="row"><b>Transparency —</b> Bad. Both $16,000 payments are logged only as "campaign expense" — no description of what was purchased. That's within disclosure rules but tells the public nothing.</div>
+        <div class="row"><b>Financial accountability —</b> Bad. All three entities named in the original Election Hive flag for this bill — Maverik, Clyde Companies, and Gathering Inc. — are confirmed financial relationships, not a coincidental pattern match to a different bill.</div>
+        <div class="row"><b>Environmental impact —</b> Not applicable.</div>
+        <div class="row"><b>Community impact —</b> Mixed. Without knowing what the $16,000 purchased, it's not possible to say whether the public interest was affected — only that the financial relationship exists and isn't explained.</div>
+        <div class="row fix"><b>How This Could Have Served the Collective Better</b>A specific expenditure description — even a general one like "consulting services" or "polling" — would let the public understand what a $16,000 payment was actually for, rather than a generic label that discloses nothing.</div>
+      </div>
+    </details>
+
+    <details class="grade-card">
+      <summary>The Horrocks/I-15 overlap <span class="grade-pill" style="background:var(--teal-soft);">TOO WEAK TO GRADE</span></summary>
+      <div class="grade-card-body">
+        <div class="row">This one doesn't get a full rubric grade. His own disclosure forms show he was no longer a Horrocks employee when the I-15 Tech Corridor project was built, which undercuts the strongest version of this finding. But leaving as an employee doesn't rule out working the same project as a paid outside consultant through his own firm — that possibility is untested, not closed. What's confirmed either way: his trade association funds his campaign, and he's claimed personal credit for two separate Horrocks-built projects in his own campaign materials. That's a pattern worth noting, not a documented conflict.</div>
+      </div>
+    </details>
+  </div>
+
+  <h2 class="section">As a Candidate: What This Means for the Collective</h2>
+  <p>Individual bills get graded above on their own terms. Stepping back to the same five criteria across his whole documented record:</p>
+
+  <table class="coi">
+    <tr><th>Criterion</th><th>Assessment</th></tr>
+    <tr><td class="finding">Power</td><td class="finding">Leans bad. Two of his most consequential bills moved through mechanisms that shield who's accountable: S.B. 197's base-year change passed by anonymous voice vote, and H.B. 235 died via a no-debate procedural strike despite real support at every recorded stage. In both cases, a decision with statewide financial consequence happened without anyone's name attached.</td></tr>
+    <tr><td class="finding">Transparency</td><td class="finding">Mixed. His formal COI disclosures are genuinely more thorough than several other legislators' in this project — he names six business entities by name where others have left seats undisclosed. But his campaign materials repeatedly credit outcomes ("the Legislature" cut taxes, he "accelerated" I-15 funding) without naming the specific bill or firm involved, even when naming it would show his own attempt failed or his own employer changed.</td></tr>
+    <tr><td class="finding">Financial accountability</td><td class="finding">Leans bad. A $16,000 campaign expenditure to a network-connected vendor is logged only as "campaign expense." His own trade association, which funds him, has Horrocks leadership on its board. Clyde Companies is simultaneously a donor and a personal income source. None of these individually proves wrongdoing, but together they describe a pattern of financial relationships that are real but thinly documented.</td></tr>
+    <tr><td>Environmental impact</td><td>Not applicable to the bills and relationships documented on this page.</td></tr>
+    <tr><td class="finding">Community impact</td><td class="finding">Mixed. Residents and advocacy groups did get real hearings and testified on the record — S.B. 242's committee process was genuinely open, unlike S.B. 197's amendment. But organized opposition didn't change S.B. 242's outcome, and the base-year change affecting every HTRZ, RDA, and UFAIR district in the state happened without any named person the public could hold accountable for it.</td></tr>
+  </table>
+
+  <div class="box caution">
+    <div class="box-label">Overall grade, as a candidate</div>
+    <p style="margin:0 0 10px;"><span class="grade-pill" style="background:var(--coral); font-size:1.1rem; padding:4px 16px;">C-</span></p>
+    <p style="margin:0;">This reflects two real, concrete accountability problems (the anonymous S.B. 197 amendment and H.B. 235's no-debate kill) and a recurring pattern of campaign messaging that doesn't name the specific bill or relationship behind a claim — balanced against genuinely thorough COI disclosure and real public hearings on S.B. 242 that most of this project's other subjects haven't gotten. <strong>This grade can change as more facts come in.</strong> Several threads on this page are still open — what the $16,000 to Gathering Inc. actually purchased, whether Christofferson Engineering has done any work connected to Horrocks, who moved the S.B. 197 amendment — and any of them could move this grade in either direction once resolved.</p>
+  </div>
+
+  <h2 class="section">Where This Stands</h2>
+  <p>H.B. 235's confirmed midnight kill and S.B. 242's genuine public opposition are the two strongest, most concrete findings on this page — both grounded in primary vote records and committee testimony. The $16,000 to Gathering Inc. is the strongest lead in the H.B. 57 thread, though what that money purchased remains unknown. The S.B. 197 amendment mystery is substantive but likely unresolvable without direct access to the written House Journal. The Horrocks/I-15 overlap is weak and is kept here as background, not a leading finding.</p>
+
+  <details class="sources">
+    <summary>Sources &amp; further reading</summary>
+    <ol>
+      <li>Rep. Christofferson's profile, le.utah.gov, 2026 committee assignments</li>
+      <li>S.B. 197 (2026), "Transportation Funding and Governance Amendments" — bill text, status table, and House floor amendment record, le.utah.gov</li>
+      <li>S.B. 242 (2026), "Transportation Amendments" — bill text, all substitutes, Senate committee minutes, and House/Senate final vote rolls, le.utah.gov; House recap article, house.utleg.gov</li>
+      <li>H.B. 235 (2026), "Income Tax Revisions" — bill text, full status/action history, House and Senate committee vote rolls, le.utah.gov</li>
+      <li>H.B. 57 (2026), "Motor Vehicle Division Amendments" — enrolled text, le.utah.gov</li>
+      <li>Campaign finance: disclosures.utah.gov, full DEX exports 2018-2026 (9 unique files)</li>
+      <li>Rep. Christofferson's Conflict of Interest disclosures: 2016 filing (signed), 2018 filing, 2022 filing, and current filing — all disclosures.utah.gov</li>
+      <li>Horrocks Engineers' own project archive: Technology Services page, company blog (horrocksengineers.wordpress.com), and the 8/1/2025 blog post "Decades of Transportation Work Shapes Horrocks and its Homeland" confirming the I-15 Tech Corridor / Triumph Boulevard / frontage road system contract</li>
+      <li>Cross-referenced: [[wayne-harper-campaign-finance]], [[ronald-winterton-sb57]], [[hb530-nucleus-institute-act]], [[kirk-cullimore-committees]]</li>
+    </ol>
+  </details>
+
+</div>
+
+<footer class="site">
+  The Weber County Hive · Accountability journalism for Weber County and beyond
+</footer>
+
+</body>
+</html>
