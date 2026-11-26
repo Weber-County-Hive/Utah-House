@@ -1,0 +1,431 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Rep. Karianne Lisonbee — Utah House Directory</title>
+<style>
+  :root {
+    --cream: #f7f3e8;
+    --cream-dark: #e6f1ee;
+    --teal-dark: #264653;
+    --teal-soft: #3d6470;
+    --turquoise: #2a9d8f;
+    --turquoise-dark: #1f7a6e;
+    --yellow: #e9c46a;
+    --yellow-dark: #b9861f;
+    --coral: #e76f51;
+    --green: #588157;
+    --border: #cfe3de;
+    --good: #588157;
+    --bad: #e76f51;
+    --mixed: #b9861f;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background: var(--cream);
+    color: var(--teal-dark);
+    font-family: Georgia, 'Iowan Old Style', 'Times New Roman', serif;
+    line-height: 1.65;
+  }
+  .wrap { max-width: 820px; margin: 0 auto; padding: 0 24px 80px; }
+
+  header.masthead {
+    background: var(--teal-dark);
+    color: var(--cream);
+    padding: 40px 24px 34px;
+    border-bottom: 6px solid var(--turquoise);
+  }
+  header.masthead .inner { max-width: 820px; margin: 0 auto; }
+  .back-link { color: var(--turquoise); font-size: 0.85rem; text-decoration: none; }
+  .case-label {
+    display: inline-block;
+    font-family: 'Courier New', monospace;
+    letter-spacing: 0.08em;
+    font-size: 0.78rem;
+    color: var(--turquoise);
+    border: 1px solid var(--turquoise-dark);
+    padding: 3px 10px;
+    border-radius: 3px;
+    margin: 14px 0 16px;
+    text-transform: uppercase;
+  }
+  h1.headline { font-size: 2rem; line-height: 1.2; margin: 0 0 8px; font-weight: 700; }
+  p.subtitle { font-size: 1.05rem; color: var(--cream-dark); margin: 0 0 18px; }
+  p.dek { font-size: 1.1rem; color: var(--cream-dark); font-style: italic; margin: 0 0 18px; max-width: 640px; }
+  .byline-row { display: flex; flex-wrap: wrap; gap: 18px; font-size: 0.85rem; color: var(--cream-dark); border-top: 1px solid rgba(245,240,228,0.2); padding-top: 14px; }
+
+  .lede { font-size: 1.15rem; margin: 34px 0 8px; }
+  .lede::first-letter { font-size: 3.2rem; float: left; line-height: 0.85; padding-right: 8px; padding-top: 4px; color: var(--turquoise-dark); font-weight: 700; }
+
+  h2.section { margin-top: 46px; font-size: 1.5rem; border-bottom: 3px solid var(--turquoise); padding-bottom: 8px; }
+  h3.subsection { margin-top: 26px; font-size: 1.1rem; color: var(--turquoise-dark); }
+  p { margin: 14px 0; }
+  a { color: var(--turquoise-dark); }
+
+  .box { background: #fffdf7; border: 1px solid var(--border); border-radius: 6px; padding: 18px 22px; margin: 22px 0; }
+  .box.caution { border-color: var(--bad); background: #fbf1ee; }
+  .box.caution .box-label { color: var(--bad); }
+  .box.link-forward { border-color: var(--yellow-dark); background: #fbf3e0; }
+  .box.link-forward .box-label { color: var(--yellow-dark); }
+  .box-label { text-transform: uppercase; letter-spacing: 0.06em; font-size: 0.78rem; font-weight: 700; color: var(--turquoise-dark); margin-bottom: 8px; }
+
+  table.coi { width: 100%; border-collapse: collapse; margin: 16px 0; font-size: 0.92rem; }
+  table.coi th, table.coi td { border: 1px solid var(--border); padding: 8px 10px; text-align: left; vertical-align: top; }
+  table.coi th { background: var(--teal-dark); color: var(--cream); font-weight: 600; }
+  table.coi tr:nth-child(even) td { background: var(--cream-dark); }
+  table.coi td.finding { background: #e9f0e3; font-weight: 700; color: var(--teal-dark); }
+
+  .timeline { margin: 24px 0; }
+  .tl-item { position: relative; padding: 4px 0 22px 26px; border-left: 3px solid var(--turquoise); margin-left: -3px; }
+  .tl-item:last-child { border-left: 3px solid transparent; }
+  .tl-item::before { content: ''; position: absolute; left: -9px; top: 4px; width: 14px; height: 14px; border-radius: 50%; background: var(--cream); border: 3px solid var(--turquoise-dark); }
+  .tl-date { font-family: 'Courier New', monospace; font-weight: 700; color: var(--turquoise-dark); font-size: 0.88rem; }
+  .tl-title { font-weight: 700; margin: 3px 0 4px; }
+  .tl-body { font-size: 0.94rem; color: var(--teal-soft); }
+
+  .compare { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin: 18px 0; }
+  @media (max-width: 620px) { .compare { grid-template-columns: 1fr; } }
+  .compare-col { border-radius: 6px; padding: 14px 16px; font-size: 0.93rem; }
+  .compare-col.his-words { background: var(--cream-dark); border: 1px solid var(--border); }
+  .compare-col.record { background: #fbf1ee; border: 1px solid var(--bad); }
+  .compare-label { font-weight: 700; text-transform: uppercase; font-size: 0.72rem; letter-spacing: 0.05em; margin-bottom: 6px; display: block; }
+  .compare-col.his-words .compare-label { color: var(--turquoise-dark); }
+  .compare-col.record .compare-label { color: var(--bad); }
+
+  .grade-wrap { margin: 20px 0; }
+  details.grade-card { background: #fffdf7; border: 1px solid var(--border); border-radius: 6px; margin-bottom: 12px; overflow: hidden; }
+  details.grade-card summary {
+    cursor: pointer; padding: 14px 100px 14px 18px; font-weight: 700;
+    display: flex; justify-content: space-between; align-items: center;
+    list-style: none; position: relative;
+  }
+  details.grade-card summary::-webkit-details-marker { display: none; }
+  details.grade-card summary::after {
+    content: '▸ tap to expand'; position: absolute; right: 16px; top: 50%;
+    transform: translateY(-50%); font-size: 0.72rem; font-weight: 400;
+    font-style: italic; color: var(--turquoise-dark); white-space: nowrap;
+  }
+  details.grade-card[open] summary::after { content: '▾ tap to collapse'; }
+  .grade-pill {
+    font-family: 'Courier New', monospace; font-size: 0.82rem; font-weight: 700;
+    padding: 2px 11px; border-radius: 3px; color: #fff; margin-left: 10px;
+  }
+  .grade-card-body { padding: 0 18px 16px; font-size: 0.94rem; }
+  .grade-card-body .row { margin-bottom: 8px; }
+  .grade-card-body .row b { color: var(--turquoise-dark); }
+  .grade-card-body .row.fix {
+    margin-top: 14px; background: #eaf1e5; border: 1px solid var(--green);
+    border-left: 4px solid var(--green); border-radius: 4px;
+    padding: 12px 14px 12px 40px; position: relative;
+  }
+  .grade-card-body .row.fix::before {
+    content: '✓'; position: absolute; left: 12px; top: 12px; width: 20px; height: 20px;
+    background: var(--green); color: #fff; border-radius: 50%; font-size: 0.75rem;
+    font-weight: 700; display: flex; align-items: center; justify-content: center;
+  }
+  .grade-card-body .row.fix b {
+    color: var(--green); text-transform: uppercase; font-size: 0.78rem;
+    letter-spacing: 0.03em; display: block; margin-bottom: 4px;
+  }
+  .rubric-intro { font-size: 0.95rem; color: var(--teal-soft); margin-bottom: 18px; }
+
+  details.sources { margin-top: 40px; border-top: 2px solid var(--teal-dark); padding-top: 12px; }
+  details.sources summary { cursor: pointer; font-weight: 700; color: var(--turquoise-dark); font-size: 0.95rem; }
+  details.sources ol { font-size: 0.9rem; color: var(--teal-soft); padding-left: 20px; }
+  details.sources li { margin-bottom: 8px; }
+
+  footer.site { text-align: center; font-size: 0.82rem; color: var(--teal-soft); margin-top: 60px; padding-top: 20px; border-top: 1px solid var(--border); }
+
+  @media (max-width: 600px) { h1.headline { font-size: 1.5rem; } }
+.hbx-top{margin:0}
+.hb-bar{background:#0d0b0a;border-bottom:1px solid #3a2f1c;padding:10px 20px}
+.hb-bar a{display:flex;align-items:center;gap:12px;max-width:1100px;margin:0 auto;text-decoration:none}
+.hb-bar img{width:52px;height:52px;border-radius:4px;display:block;flex:none}
+.hb-name{font-family:'Cinzel','Trajan Pro',Georgia,serif;color:#d4af37;font-size:16px;letter-spacing:.14em;text-transform:uppercase;line-height:1.2;display:block}
+.hb-sub{font-family:Georgia,serif;font-style:italic;color:#b8956a;font-size:12.5px;display:block;margin-top:2px}
+.hb-line-top{font-family:Georgia,serif;color:#e8d9b5;font-size:12.5px;display:block;margin-top:3px;line-height:1.4}
+.hbx-slim{background:#0e2438;color:#dbe7f0;font:600 14px/1.4 Arial,sans-serif;padding:7px 20px;display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap}
+.hbx-slim a{color:#F3E3B3;text-decoration:underline}
+.hb-foot{background:#0d0b0a;color:#b8956a;text-align:center;padding:26px 20px 30px;font-family:Georgia,serif;line-height:1.5}
+.hb-foot img{width:52px;height:52px;display:block;margin:0 auto 10px}
+.hb-foot .hb-name,.hb-foot .hb-sub{display:block}
+.hb-foot .hb-tag{font-size:10.5px;letter-spacing:.2em;text-transform:uppercase;color:#8a7650;margin-top:8px;display:block}
+.hb-line{max-width:720px;margin:14px auto 0;color:#e8d9b5;font-size:15.5px;line-height:1.5}
+.hb-tips{margin:16px 0 4px;display:flex;gap:10px;justify-content:center;flex-wrap:wrap}
+.hb-btn{display:inline-block;border:2px solid #d4af37;background:#d4af37;color:#0d0b0a!important;font:700 15px Georgia,serif;padding:10px 18px;border-radius:6px;text-decoration:none!important}
+.hb-btn2{background:transparent;color:#d4af37!important}
+.hb-small{font-size:12.5px;color:#8a7650;margin:6px 0 0}
+.hb-small a{color:#d4af37;text-decoration:underline}
+.hb-foot p{max-width:720px;margin-left:auto!important;margin-right:auto!important}
+.hbx-tools{max-width:980px;margin:14px auto 4px;padding:0 20px;display:flex;flex-wrap:wrap;gap:8px;align-items:flex-start;font-family:Arial,sans-serif;position:relative;z-index:2}
+.hbx-tool{display:inline-block;font:700 15px Arial,sans-serif;color:#13233F!important;background:#fff;border:1px solid #c8cfd6;border-radius:6px;padding:9px 13px;text-decoration:none!important;cursor:pointer;line-height:1.2}
+.hbx-tool:hover{border-color:#13233F}.hbx-cnchip b{color:#1f5f9e;font-family:ui-monospace,Menlo,monospace}
+.hbx-jump{flex-basis:100%;order:5;border:1px solid #c8cfd6;border-radius:6px;background:#fff;color:#13233F}.hbx-jump summary{cursor:pointer;padding:9px 13px;font:700 15px Arial,sans-serif}
+.hbx-jump ol{margin:0;padding:4px 16px 12px 36px}.hbx-jump li{margin:6px 0;font-size:16.5px}.hbx-jump a{color:#13233F}
+.hbx-shelfwrap{background:#0e2438;color:#dbe7f0;padding:26px 20px 30px;font:16px/1.5 Arial,sans-serif;margin-top:48px;position:relative;z-index:1}
+.hbx-shelfwrap .in{max-width:900px;margin:0 auto}
+.hbx-shelf{border:2px dashed #9fd0ee;border-radius:10px;padding:16px 18px}
+.hbx-cn-big{font:600 17px ui-monospace,Menlo,monospace;margin-bottom:12px;color:#fff}.hbx-cn-big b{color:#9fd0ee}
+.hbx-nav{display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap;margin-bottom:12px}
+.hbx-nav-btn{flex:1;min-width:220px;background:#12304a;border:1px solid #4d86ad;border-radius:8px;padding:12px 14px;color:#fff!important;text-decoration:none!important;font-size:16px}.hbx-nav-btn b{color:#9fd0ee;font-family:ui-monospace,Menlo,monospace}.hbx-off{opacity:.5}
+.hbx-list summary{cursor:pointer;font-weight:700;padding:6px 0}.hbx-list ol{list-style:none;margin:6px 0 0;padding:0}.hbx-list li{padding:6px 0;border-bottom:1px solid #2b4a63}.hbx-list a{color:#fff!important;text-decoration:none}
+.hbx-shelf-head{color:#9fd0ee;font:600 13px ui-monospace,Menlo,monospace;letter-spacing:.1em}.hbx-cn{font-family:ui-monospace,Menlo,monospace;color:#9fd0ee;margin-right:6px}
+.hbx-find{margin:14px 0 4px}.hbx-find label{display:block;font-weight:700;margin-bottom:6px}.hbx-find div{display:flex;gap:8px;flex-wrap:wrap}.hbx-find input{flex:1;min-width:0;width:100%;padding:12px 14px;font-size:17px;border:2px solid #4d86ad;border-radius:6px;color:#13233F;background:#fff}.hbx-find button{padding:12px 18px;font-size:16px;font-weight:700;background:#9fd0ee;color:#0e2438;border:0;border-radius:6px;cursor:pointer}
+.hbx-search{font-size:15px;margin-top:12px}.hbx-search a,.hbx-search b{color:#9fd0ee}
+.hbx-totop{display:none;position:fixed;right:16px;bottom:16px;z-index:50;background:#0e2438;color:#fff!important;border:2px solid #9fd0ee;border-radius:24px;padding:10px 16px;font:700 15px Arial,sans-serif;text-decoration:none!important;box-shadow:0 2px 8px rgba(0,0,0,.25)}
+.hbx-dates{font-family:ui-monospace,Menlo,monospace;font-size:13px}
+@media(max-width:600px){.hb-bar img{width:38px;height:38px}.hb-line-top{font-size:11.5px}}
+@media print{.hbx-tools,.hbx-totop{display:none}}
+.wrap+.hbx-shelfwrap{margin-top:0}
+.hbx-dates{color:#cfe3de;margin:12px 0 0}
+.hb-foot p{max-width:720px;margin-left:auto!important;margin-right:auto!important}
+.hbx-shelfwrap+.hb-foot{margin-top:0}
+</style>
+<style>
+.plain-box{background:#f7f3e8;border:2px dashed #b9861f}
+.note{font:14px Arial,sans-serif;color:#3d6470}
+.mermaidbox{background:#fff;border:2px solid #cfe3de;border-radius:6px;padding:12px;margin:14px 0}
+pre.mermaid{margin:0;font-size:20px;text-align:center}
+.bars{margin:12px 0}.bar{display:grid;grid-template-columns:70px 1fr 160px;gap:10px;align-items:center;margin:6px 0;font:15px Arial,sans-serif}
+.bar .t{background:#e6f1ee;height:26px;border-radius:4px;overflow:hidden}.bar .f{background:#264653;height:100%}.bar .f.g{background:#e9c46a}.bar .v{text-align:right;font-weight:700}
+.flips{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px}
+.flip{text-align:left;background:#e6f1ee;border:1px solid #cfe3de;border-top:5px solid #264653;padding:14px 16px;cursor:pointer;font:inherit;color:inherit;min-height:96px}
+.flip .ft{font-weight:bold;font-size:1.05rem}.flip .fh{font:13px Arial,sans-serif;margin-top:6px}.flip .fd{display:none;margin-top:8px}
+.flip[aria-expanded="true"] .fd{display:block}.flip[aria-expanded="true"] .fh{display:none}
+.counter{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:10px}.counter div{background:#264653;color:#fff;padding:14px;text-align:center;border-radius:6px}.counter .n{font:700 1.8rem Arial,sans-serif;color:#e9c46a}.counter .l{font-size:.88rem}
+.stats-row{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:10px;margin:10px 0}.stats-row div{background:#264653;color:#fff;padding:14px;text-align:center;border-radius:6px}.stats-row b{display:block;font:700 1.6rem Arial,sans-serif;color:#e9c46a}.stats-row span{font-size:.9rem}
+@media(max-width:600px){.bar{grid-template-columns:50px 1fr 120px;font-size:13px}}
+</style>
+</head>
+<body>
+<div class="hbx-top"><div class="hb-bar"><a href="https://webercountyhive.substack.com/" target="_blank" rel="noopener"><img src="uhp-badge.png" alt="Utah Hive Politics logo"><span><span class="hb-name">Utah Hive Politics</span><span class="hb-sub">from the publisher of The Weber County Hive</span><span class="hb-line-top">The people's publication. We investigate what's best for the public as a whole, not any party or special interest.</span></span></a></div>
+<div class="hbx-slim"><span>Utah-House · UH 100.03</span><span><a href="https://weber-county-hive.github.io/-weber-county-hive-index/">← Hive library (every repo)</a></span></div></div>
+
+<header class="masthead">
+  <div class="inner">
+    <a href="index.html" class="back-link">&larr; Utah House Directory</a>
+    <div class="case-label">House District 14 · Profile</div>
+    <h1 class="headline">Rep. Karianne Lisonbee</h1>
+    <p class="subtitle">House Judiciary and House Education committees · Criminal Justice Appropriations Subcommittee</p>
+    <p class="dek">Two nonprofit board seats listed on her 2025 conflict of interest form are not on her 2026 form, and state business records list her on two nonprofit boards. Ten 2026 bills, seven signed. Eight years of campaign money, with her largest payee listed mostly as "Campaign Expense."</p>
+    <div class="byline-row">
+      <span>The Weber County Hive</span>
+      <span>Davis County (Syracuse area)</span>
+      <span>In office since January 1, 2017</span>
+    </div>
+    <p class="hbx-dates">Posted Nov. 26, 2026 · Updated Nov. 26, 2026</p>
+  </div>
+</header>
+
+<div class="wrap">
+
+  <div class="box plain-box">
+    <div class="box-label">In plain words</div>
+    <p style="margin:0;">Karianne Lisonbee has represented part of Davis County in the Utah House since 2017. She did not run for her House seat again in 2026. She ran for Congress instead and lost the Republican primary to Rep. Blake Moore in June. This page shows what her own forms, bills and campaign reports say, so readers can look at her record as her House term closes.</p>
+  </div>
+
+  <h2 class="section">The Basics</h2>
+  <table class="coi">
+    <tr><th>Office</th><td>Utah House District 14, Davis County. Republican. In office since January 1, 2017 (her House page).</td></tr>
+    <tr><th>2026 committees</th><td>Criminal Justice Appropriations Subcommittee; Education Interim; House Education; House Judiciary; Judiciary Interim (her House page).</td></tr>
+    <tr><th>Before the Legislature</th><td>Syracuse City Council. Degree in Family Studies, Brigham Young University. Profession listed as homemaker (her House page).</td></tr>
+    <tr><th>2026 race</th><td>Did not seek re-election to the House. Lost the June 2026 Republican primary for Utah's 2nd Congressional District to Rep. Blake Moore (Ballotpedia; KSL; Utah News Dispatch). A congressional campaign reports to the Federal Election Commission, not the state system.</td></tr>
+  </table>
+
+  <h2 class="section">The Conflict-of-Interest Form: 2025 vs. 2026</h2>
+  <p>Utah legislators file a signed form each year listing employers, businesses they own or help run, board seats and household connections. We read her 2025 and 2026 forms on the state disclosure site on Nov. 26, 2026.</p>
+  <table class="coi">
+    <tr><th>Item</th><th>2025 form (filed Jan. 9, 2025)</th><th>2026 form (filed Jan. 5, 2026)</th></tr>
+    <tr><td>1A Employers</td><td>Current: N/A. Previous: Davis School District (substitute teacher)</td><td>N/A</td></tr>
+    <tr><td class="finding">2A Entities where she is an owner or officer</td><td class="finding">UHEA (non-profit, board member); <b>Wasatch International Adoption Agency</b> (adoption agency, board member); <b>Open Doors</b> (community service, board member)</td><td class="finding">UHEA (non-profit, board member)</td></tr>
+    <tr><td>5A Other board seats, paid or unpaid</td><td>N/A</td><td>N/A</td></tr>
+    <tr><td>7A Spouse and spouse's employer</td><td>James Lisonbee; Department of Defense</td><td>James Lisonbee; Department of Defense</td></tr>
+  </table>
+  <div class="mermaidbox"><pre class="mermaid">
+flowchart LR
+A["2025 form<br/>UHEA<br/>Wasatch International<br/>Adoption Agency<br/>Open Doors"] --> B["2026 form<br/>UHEA only"]
+</pre></div>
+  <h3 class="subsection">What state business records show</h3>
+  <p>Utah's Division of Corporations lists the officers, directors and trustees of registered nonprofits. Two records list her.</p>
+  <table class="coi">
+    <tr><th>Organization</th><th>What the state record shows</th><th>On her 2025 form?</th><th>On her 2026 form?</th></tr>
+    <tr><td><b>Wasatch International Adoptions</b></td><td>Domestic nonprofit corporation, active. Formed Feb. 21, 1997. Last renewed April 9, 2026; renew by Feb. 28, 2027. Lists Karianne Lisonbee as a <b>Director</b>, at PO Box 160152, Clearfield (the same PO box on her Utah House page). Randy Kent Mitchell is listed as president.</td><td>Yes, as "Wasatch International Adoption Agency" (board member)</td><td class="finding">No</td></tr>
+    <tr><td><b>Family Connection Center, Inc.</b></td><td>Domestic nonprofit corporation, active. Formed Sept. 24, 1985. Last renewed Oct. 27, 2025; renew by Sept. 30, 2026. Lists Karianne Lisonbee as a <b>Trustee</b>, one of 13 principals. Her principal entry was last updated Sept. 19, 2024.</td><td class="finding">No</td><td class="finding">No</td></tr>
+  </table>
+  <div class="box">
+    <div class="box-label">What the records show</div>
+    <p style="margin:0 0 8px;">Wasatch International Adoption Agency and Open Doors are listed on her 2025 form and not on her 2026 form. The state's business record for Wasatch International Adoptions, renewed April 9, 2026, still listed her as a director three months after her 2026 form was filed.</p>
+    <p style="margin:0 0 8px;">Family Connection Center, Inc. does not appear on her 2025 or 2026 form. Item 5A of the form asks for any board seat, "paid or unpaid," and she marked it N/A both years.</p>
+    <p style="margin:0;">The Sept. 19, 2024 date is when her entry in the business record was last updated, not when she joined that board. Neither the forms nor the business records explain the differences between them.</p>
+  </div>
+  <p class="note">How these were read: both forms were opened on disclosures.utah.gov and read from the rendered web page text, Nov. 26, 2026. The business records were read from Division of Corporations record screens captured by the Hive in June 2026.</p>
+
+  <h2 class="section">Her 2026 Bills</h2>
+  <p>She was the primary sponsor of these bills in the 2026 General Session. Votes are House, then Senate.</p>
+  <table class="coi">
+    <tr><th>Bill</th><th>What it does</th><th>Result</th></tr>
+    <tr><td><b>H.B. 50</b> Child Protection Ombudsman</td><td>Lets parents, not only children, complain about how the child welfare division treated them. Caseworkers taking a child into custody must tell parents the ombudsman exists. The ombudsman reports to two legislative committees each year by Oct. 1.</td><td>Signed. 74-0, 27-0.</td></tr>
+    <tr><td><b>H.B. 372</b> Child Welfare Changes</td><td>Gives the oversight committee access to the Office of Guardian ad Litem's records. Child fatality reports given to legislators can't be fully blacked out. Guardians ad litem must tell the court when they last talked with the child.</td><td>Signed. 68-0, 25-0.</td></tr>
+    <tr><td><b>H.B. 370</b> Sex Offender Oversight</td><td>Sets up monitoring for registered offenders with no home address. A car or tent doesn't count as a residence. Offenders pay for monitoring unless they can't afford it.</td><td>Signed. 71-1, 25-0.</td></tr>
+    <tr><td><b>H.B. 48</b> Criminal and Juvenile Justice</td><td>Defines how re-offending is measured. Lets a prosecutor ask to move a minor charged as an adult with aggravated murder from youth custody to the state prison system. Orders a study of income-based fines and fees.</td><td>Signed. 56-14, 20-7.</td></tr>
+    <tr><td><b>H.B. 20</b> Correctional Facility Capacity</td><td>Creates a restricted account that can be spent only on building or expanding state prisons.</td><td>Signed. 69-0, 23-3.</td></tr>
+    <tr><td><b>H.B. 23</b> Service Animal Amendments</td><td>The state posts contact information for the service-animal rights agency online. A felony penalty in the first version was removed before passage.</td><td>Signed. Unanimous.</td></tr>
+    <tr><td><b>H.C.R. 10</b> PEHP Hormone Therapy</td><td>Directs the state employee health plan to cover hormone replacement therapy for menopause symptoms.</td><td>Signed. 67-1, 23-0.</td></tr>
+    <tr><td><b>H.B. 480</b> Medical Record Amendments</td><td>Final version: a patient can ask her provider to note in her record that a pregnancy loss was not elective. An earlier change to the definition of "elective" abortion was cut.</td><td>Passed the House 56-14. On the Senate calendar the last night, March 6, it was held ("circled") at 10:44 p.m. and 11:13 p.m. and got no final vote.</td></tr>
+    <tr><td><b>H.B. 234</b> Education Testing</td><td>A pilot letting districts and charters use a different national test in place of the state year-end test.</td><td>Failed on the House floor, 32-42.</td></tr>
+    <tr><td><b>H.B. 435</b> State Policy on Judea and Samaria</td><td>A statement of state policy. Senate sponsor: Sen. Keven J. Stratton.</td><td>Never sent to a committee; stayed in House Rules all session.</td></tr>
+  </table>
+  <p>She was also the House floor sponsor of S.B. 233 (Judicial Performance Evaluation, Sen. Brady Brammer), which ordered a study on counting judges' reversals, due to the Judiciary Interim Committee by Nov. 1, 2026. Other floor sponsors on her bills include Sen. Brady Brammer (H.B. 480, H.B. 370), Sen. Kirk Cullimore (H.B. 48) and Sen. Wayne Harper (H.B. 372, H.B. 50). See <a href="https://weber-county-hive.github.io/utah-senators/brady-brammer.html">Brammer</a> and <a href="https://weber-county-hive.github.io/utah-senators/kirk-cullimore.html">Cullimore</a> in the Senators repo.</p>
+
+  <h3 class="subsection">What the cost notes say</h3>
+  <p>A fiscal note is the Legislature's own estimate of what a bill will cost. It is not the money itself; that is set in the budget bills.</p>
+  <table class="coi">
+    <tr><th>Bill</th><th>Estimated cost</th><th>Paid from</th></tr>
+    <tr><td>H.B. 370 (note dated Feb. 23, 2026)</td><td>About $103,600 in year one, rising to $696,600 a year by 2036. Offender fees bring in about $19,000 a year. Local governments are not expected to see direct, measurable costs.</td><td>Mostly the state General Fund, through the Department of Public Safety</td></tr>
+    <tr><td>H.B. 20 (note dated Jan. 28, 2026, first substitute)</td><td>No new tax. Moves unspent leftover money into the prison account: an estimated $1.5 million in fiscal 2027 and $1.29 million in 2028. Running the account costs about $1,900 a year.</td><td>Existing nonlapsing balances; General Fund for upkeep</td></tr>
+    <tr><td>H.C.R. 10 (note dated Feb. 5, 2026)</td><td>$0. It is a resolution and doesn't spend money itself. Any added drug cost would show up in PEHP premiums; no figure was found.</td><td>&mdash;</td></tr>
+  </table>
+  <p class="note">The H.B. 370 note's written summary and its table differ slightly in year two ($198,000 vs. $199,900). The table numbers are used here.</p>
+
+  <h2 class="section">Campaign Money, 2018&ndash;2025 (state House accounts)</h2>
+  <div class="stats-row"><div><b>$240,103.03</b><span>new money raised, 2018&ndash;2025</span></div><div><b>$209,006.13</b><span>spent, 2018&ndash;2025</span></div><div><b>2,034</b><span>transactions checked</span></div></div>
+  <div class="bars"><div class="bar"><span>2018</span><div class="t"><div class="f" style="width:40.2%"></div></div><span class="v">$24,568.84 in</span></div><div class="bar"><span></span><div class="t"><div class="f g" style="width:25.7%"></div></div><span class="v">$15,719.94 out</span></div><div class="bar"><span>2019</span><div class="t"><div class="f" style="width:11.1%"></div></div><span class="v">$6,778.91 in</span></div><div class="bar"><span></span><div class="t"><div class="f g" style="width:12.4%"></div></div><span class="v">$7,568.74 out</span></div><div class="bar"><span>2020</span><div class="t"><div class="f" style="width:65.3%"></div></div><span class="v">$39,903.11 in</span></div><div class="bar"><span></span><div class="t"><div class="f g" style="width:44.7%"></div></div><span class="v">$27,346.25 out</span></div><div class="bar"><span>2021</span><div class="t"><div class="f" style="width:18.8%"></div></div><span class="v">$11,496.88 in</span></div><div class="bar"><span></span><div class="t"><div class="f g" style="width:14.8%"></div></div><span class="v">$9,070.68 out</span></div><div class="bar"><span>2022</span><div class="t"><div class="f" style="width:72.7%"></div></div><span class="v">$44,453.95 in</span></div><div class="bar"><span></span><div class="t"><div class="f g" style="width:52.8%"></div></div><span class="v">$32,243.81 out</span></div><div class="bar"><span>2023</span><div class="t"><div class="f" style="width:43.0%"></div></div><span class="v">$26,276.06 in</span></div><div class="bar"><span></span><div class="t"><div class="f g" style="width:28.8%"></div></div><span class="v">$17,611.22 out</span></div><div class="bar"><span>2024</span><div class="t"><div class="f" style="width:100.0%"></div></div><span class="v">$61,125.21 in</span></div><div class="bar"><span></span><div class="t"><div class="f g" style="width:91.3%"></div></div><span class="v">$55,816.64 out</span></div><div class="bar"><span>2025</span><div class="t"><div class="f" style="width:82.1%"></div></div><span class="v">$50,189.14 in</span></div><div class="bar"><span></span><div class="t"><div class="f g" style="width:71.4%"></div></div><span class="v">$43,628.85 out</span></div></div>
+  <p class="note">Dark bars are money in; yellow bars are money out. Money in includes balances she moved from her older House accounts: $8,783.16 (2018), $4,271.38 (2020) and $11,634.53 (2022). That is $24,689.07 in all. The "new money raised" figure leaves it out. Election years have five reports; other years have a Year End report only. As of Nov. 26, 2026, the state site shows no reports for 2026. In past years without an election, her only report was filed in January. So a 2026 report may not be due until January 2027.</p>
+  <table class="coi">
+    <tr><th>2018&ndash;2025</th><th>From her filed reports</th></tr>
+    <tr><td>Largest donors</td><td><ul style="margin:0;padding-left:18px"><li>Utah Association of REALTORS PAC: $17,612.06 (filed under two spellings; a separate "UAOR" line adds $3,000)</li><li>Entertainment Software Association: $13,750</li><li>Select Health: $7,000</li><li>Northern Utah Legislative PAC, Clearfield Recycling and Intrepid Potash: $5,000 each</li><li>Lincoln Hill Partners and Gold Cross Services: $4,500 each</li><li>Maverik Inc.: $4,250</li><li>Utah Bankers Association State PAC: $4,100</li><li>Reagan Outdoor Advertising: $3,500</li></ul></td></tr>
+    <tr><td class="finding">Largest payee</td><td class="finding">Kyle Palmer, $22,730.31 in all. Most of it, $22,205.31, came in five payments listed only as "Campaign Expense" (two in 2024, three in 2025). The rest was a $425 donation (2021) and a $100 association expense (2024). Palmer is treasurer for several leadership PACs the Hive tracks (<a href="https://weber-county-hive.github.io/pac/nupac.html">NUPAC</a>; <a href="https://weber-county-hive.github.io/pac/utah-republican-senate-campaign-committee.html">Senate GOP campaign committee</a>).</td></tr>
+    <tr><td>Next largest payees</td><td>Utah Republican Party, $19,903.65 (mailers, donations, Lincoln Day dinners, travel); Smith's Food and Drug, $16,045.00; Salt Lake Mailing, $8,291.45; GH4 Consulting, $5,451.06.</td></tr>
+    <tr><td>How spending is labeled</td><td>Office, $54,897; "Campaign Expense," $45,126; travel, $29,884; donations to others, about $19,000; mailers and outreach make up most of the rest. "Campaign Expense" totals by year: $11,929 (2022), $3,886 (2023), $18,415 (2024), $10,896 (2025).</td></tr>
+    <tr><td>Mileage to herself</td><td>$29,737.52 in 24 lines, 2018&ndash;2025. Seventeen of those lines ($9,636.86, 2018&ndash;2022) name "Smith's Food and Drug" as the payee while the purpose describes mileage reimbursement to herself. The reports show it that way; they don't explain it.</td></tr>
+    <tr><td>Gifts to others</td><td>Utah Republican Party, Millennial PAC, Pro-Life Utah, and other candidates including Ken Ivory, Jason Thompson, Trevor Lee and Stephanie Gricius.</td></tr>
+  </table>
+  <p>The same kind of category-only label shows up across Utah campaign reports. See <a href="https://weber-county-hive.github.io/Transparency/selling-the-vote.html#vendors">Selling the Vote</a> for how consultant payments appear on the state site.</p>
+
+  <h2 class="section">Graded Against the Rubric</h2>
+  <p class="rubric-intro">Every finding is graded the same five ways used across Hive coverage: <b>Power</b>, <b>Transparency</b>, <b>Financial accountability</b>, <b>Environmental impact</b> and <b>Community impact</b>.</p>
+  <div class="grade-wrap">
+    <details class="grade-card"><summary>The board seats: her forms vs. state business records</summary><div class="grade-card-body">
+      <div class="row"><b>Power &mdash;</b> Not applicable.</div>
+      <div class="row"><b>Transparency &mdash;</b> Her 2025 and 2026 forms and the state's business records list different boards. Neither record includes an explanation of the differences.</div>
+      <div class="row"><b>Financial accountability &mdash;</b> Not assessed. We have not checked whether either organization receives state money.</div>
+      <div class="row"><b>Environmental impact &mdash;</b> Not applicable.</div>
+      <div class="row"><b>Community impact &mdash;</b> She was the primary sponsor of two child-welfare bills in 2026 (H.B. 50, H.B. 372). The conflict of interest form is the public record of an officeholder's board ties.</div>
+      <div class="row fix"><b>What the form allows</b>Item 8A of the form is an optional space where an officeholder can describe any other matter. It was blank on both forms.</div>
+    </div></details>
+    <details class="grade-card"><summary>Child welfare oversight (H.B. 50, H.B. 372)</summary><div class="grade-card-body">
+      <div class="row"><b>Power &mdash;</b> Gives parents a complaint path and gives legislators access to Guardian ad Litem records.</div>
+      <div class="row"><b>Transparency &mdash;</b> Yearly ombudsman reports with complaint totals; fatality reports to legislators can't be fully blacked out. The Guardian ad Litem records stay confidential to the public.</div>
+      <div class="row"><b>Financial accountability &mdash;</b> No cost note was read for these two bills.</div>
+      <div class="row"><b>Environmental impact &mdash;</b> Not applicable.</div>
+      <div class="row"><b>Community impact &mdash;</b> Parents in the child welfare system gain a way to file complaints with the ombudsman. Both bills passed with no votes against.</div>
+    </div></details>
+    <details class="grade-card"><summary>Prisons and offender monitoring (H.B. 370, H.B. 20, H.B. 48)</summary><div class="grade-card-body">
+      <div class="row"><b>Power &mdash;</b> H.B. 48 lets a prosecutor ask to move some minors charged as adults into the state prison system.</div>
+      <div class="row"><b>Transparency &mdash;</b> Cost estimates for H.B. 370 and H.B. 20 are public. H.B. 48 orders a study of income-based fines and fees.</div>
+      <div class="row"><b>Financial accountability &mdash;</b> H.B. 370 grows to about $696,600 a year from the General Fund. H.B. 20 moves leftover balances into a prison-only account.</div>
+      <div class="row"><b>Environmental impact &mdash;</b> Not applicable.</div>
+      <div class="row"><b>Community impact &mdash;</b> Offenders without a home take on monitoring costs unless they can't afford them.</div>
+    </div></details>
+    <details class="grade-card"><summary>Campaign spending labels</summary><div class="grade-card-body">
+      <div class="row"><b>Power &mdash;</b> Not applicable.</div>
+      <div class="row"><b>Transparency &mdash;</b> $22,205.31 to one person across 2024 and 2025 is listed only as "Campaign Expense," so a reader can't tell what it paid for.</div>
+      <div class="row"><b>Financial accountability &mdash;</b> Every payment is reported with a date, payee and amount. For these five payments, the purpose field reads only "Campaign Expense."</div>
+      <div class="row"><b>Environmental impact &mdash;</b> Not applicable.</div>
+      <div class="row"><b>Community impact &mdash;</b> Voters can see who gave and the date and amount of every payment. For lines labeled "Campaign Expense," the reports do not show what was bought.</div>
+    </div></details>
+  </div>
+
+  <h2 class="section">Three Ways to Look at It</h2>
+  <h3 class="subsection">1. The auditor's look: do the records line up?</h3>
+  <ul>
+    <li><b>Reports were filed every year.</b> Five reports in each election year (2018, 2020, 2022, 2024) and a Year End report in each other year (2019, 2021, 2023, 2025). A conflict of interest form was filed each January (Jan. 2, 2024; Jan. 9, 2025; Jan. 5, 2026).</li>
+    <li><b>The totals check out.</b> Our 2022, 2023 and 2025 totals from October match the totals we pulled again on Nov. 26. Money she moved between her own accounts ($24,689.07) is counted once, not twice.</li>
+    <li><b>Where the records don't line up.</b> Seventeen lines name "Smith's Food and Drug" as the payee while the purpose says mileage paid back to her. Five payments to one person ($22,205.31) give only "Campaign Expense" as the purpose. Her forms and the state business records list different boards.</li>
+  </ul>
+  <h3 class="subsection">2. The collective rubric: is it good for everyone?</h3>
+  <p>See the grade cards above. In short: Her child-welfare bills add ways to complain and yearly reports. Her prison bills add costs, and those costs are estimated in public. Her campaign reports show who gave and who was paid, but not always what was bought.</p>
+  <h3 class="subsection">3. The Legislature's view: what the law asks, and how lawmakers voted</h3>
+  <ul>
+    <li><b>The form follows state law.</b> Utah Code 20A-11-1604 sets what goes on the form. Item 5A asks for any board seat, "paid or unpaid."</li>
+    <li><b>Most of her bills passed with wide support.</b> Seven of ten were signed. Five passed with one "no" vote or none. H.B. 48 was the most divided (56-14 and 20-7).</li>
+    <li><b>Three did not pass.</b> H.B. 480 was held twice on the last night and got no Senate vote. H.B. 234 failed on the House floor. H.B. 435 was never sent to a committee.</li>
+    <li><b>The cost numbers come from the Legislature itself.</b> The fiscal notes above are written by the Legislature's own budget office.</li>
+  </ul>
+
+  <h2 class="section">People Connected to the Record</h2>
+  <p>Being named here does not mean anyone did anything wrong.</p>
+  <table class="coi">
+    <tr><th>Who</th><th>Why they are here</th><th>Other Hive pages</th></tr>
+    <tr><td><b>Kyle Palmer</b></td><td>Her largest campaign payee, 2018&ndash;2025</td><td><a href="https://weber-county-hive.github.io/pac/nupac.html">NUPAC</a>; <a href="https://weber-county-hive.github.io/pac/utah-republican-senate-campaign-committee.html">Senate GOP campaign committee</a>; <a href="https://weber-county-hive.github.io/-weber-county-hive-ledger/follow-the-money-uwha.html">Election Hive and Irish Elk</a></td></tr>
+    <tr><td><b>Sen. Brady Brammer</b></td><td>Senate sponsor of H.B. 480 and H.B. 370; she carried his S.B. 233 in the House</td><td><a href="https://weber-county-hive.github.io/utah-senators/brady-brammer.html">Senator profile</a></td></tr>
+    <tr><td><b>Sen. Kirk Cullimore</b></td><td>Senate sponsor of H.B. 48; she carried his 2023 S.B. 129 (judicial nominating commission) in the House</td><td><a href="https://weber-county-hive.github.io/utah-senators/kirk-cullimore.html">Senator profile</a>; <a href="https://weber-county-hive.github.io/Transparency/who-decides-part-2-courts.html">Who Decides, Part 2</a></td></tr>
+    <tr><td><b>Sen. Wayne Harper</b></td><td>Senate sponsor of H.B. 50 and H.B. 372</td><td>&mdash;</td></tr>
+    <tr><td><b>Rep. Stephanie Gricius</b></td><td>Lisonbee's campaign gave Gricius $840 in all, including $500 on Dec. 30, 2025. Gricius's campaign paid "Campaign to Elect Karianne Lisonbee" $1,248.02</td><td><a href="https://weber-county-hive.github.io/Voter-Quick-Scan-2026/">Voter Quick Scan</a></td></tr>
+    <tr><td><b>Rep. Troy Shelley</b></td><td>His campaign paid "Friends of Karianne Lisonbee" $1,000 on May 11, 2026</td><td><a href="https://weber-county-hive.github.io/Voter-Quick-Scan-2026/">Voter Quick Scan</a></td></tr>
+    <tr><td><b>Rep. Blake Moore</b></td><td>Defeated her in the June 2026 congressional primary</td><td>&mdash;</td></tr>
+  </table>
+
+  <h2 class="section">Connected Hive Work</h2>
+  <ul>
+    <li><a href="https://weber-county-hive.github.io/Transparency/who-decides-part-2-courts.html">Who Decides, Part 2: The Courts</a> &mdash; the judicial nominating and evaluation bills she carried in the House (S.B. 129, S.B. 233).</li>
+    <li><a href="https://weber-county-hive.github.io/Transparency/utah-judicial-oversight-part-2.html">Behind the Bench, Part 2</a> &mdash; S.B. 233, rated Mixed.</li>
+    <li><a href="https://weber-county-hive.github.io/bait-and-switch/bait-and-switch-part-4.html">Bills That Did the Opposite, Part 4</a> &mdash; how H.B. 480 and H.B. 435 died on March 6.</li>
+    <li><a href="https://weber-county-hive.github.io/Transparency/utah-amendments-2026-part-3.html">The 2026 Amendments, Part 3</a> &mdash; she co-sponsored H.B. 449, taxpayer oversight of spending.</li>
+    <li><a href="https://weber-county-hive.github.io/Transparency/utah-taxpayers-association.html">Who Sits at the Utah Taxpayers Association's Table</a> &mdash; she is on its "Friend of the Taxpayer" list.</li>
+    <li><a href="https://weber-county-hive.github.io/Transparency/selling-the-vote.html">Selling the Vote</a> &mdash; how consultant payments show up on the state site.</li>
+    <li><a href="https://weber-county-hive.github.io/pac/lincoln-hill-men-behind.html">The Men Behind Lincoln Hill</a> &mdash; Lincoln Hill Partners gave her campaign $4,500.</li>
+  </ul>
+
+  <h2 class="section">What We Don't Know Yet</h2>
+  <ul>
+    <li>Whether she left the Wasatch International Adoption Agency and Open Doors boards, and when.</li><li>What Family Connection Center, Inc. does. Its name doesn't say, and we haven't found a description.</li>
+    <li>What the five "Campaign Expense" payments to Kyle Palmer paid for.</li>
+    
+    <li>What the reports due this fall under H.B. 50 (Oct. 1), H.B. 372 (Nov. 1) and S.B. 233 (Nov. 1) say.</li>
+  </ul>
+
+  <h2 class="section">Questions to Ask, and Whom to Ask</h2>
+  <ol>
+    <li><b>Utah Division of Corporations:</b> How do nonprofits update their list of directors and trustees when someone leaves?</li>
+    <li><b>Lieutenant Governor's Elections Office:</b> Does the conflict of interest form have a way to show when a listed board seat ends?</li>
+    <li><b>Child Protection Ombudsman:</b> Is the first H.B. 50 report public, and where?</li>
+    <li><b>Legislative Fiscal Analyst:</b> Was H.B. 370's monitoring cost funded in the 2026 budget bills?</li>
+  </ol>
+
+  <h2 class="section">Words to Know</h2>
+  <div class="flips">
+    <button class="flip" aria-expanded="false"><div class="ft">Conflict of interest form</div><div class="fh">Tap to see</div><div class="fd">A yearly signed form where Utah officeholders list employers, businesses, board seats and household ties that might matter to their votes.</div></button>
+    <button class="flip" aria-expanded="false"><div class="ft">Primary sponsor</div><div class="fh">Tap to see</div><div class="fd">The legislator who introduces a bill and carries it in their own chamber.</div></button>
+    <button class="flip" aria-expanded="false"><div class="ft">Floor sponsor</div><div class="fh">Tap to see</div><div class="fd">The legislator who carries a bill in the other chamber.</div></button>
+    <button class="flip" aria-expanded="false"><div class="ft">Fiscal note</div><div class="fh">Tap to see</div><div class="fd">The Legislature's own estimate of what a bill will cost and who pays.</div></button>
+    <button class="flip" aria-expanded="false"><div class="ft">Ombudsman</div><div class="fh">Tap to see</div><div class="fd">An office that takes complaints about a government agency and reports on them.</div></button>
+  </div>
+
+  <h2 class="section">Behind This Piece</h2>
+  <div class="counter"><div><div class="n">42</div><div class="l">records read (forms, bills, cost notes, reports)</div></div><div><div class="n">2,034</div><div class="l">campaign transactions checked</div></div><div><div class="n">4</div><div class="l">checked but not used</div></div><div><div class="n">75</div><div class="l">searches run (estimate)</div></div></div>
+
+  <details class="sources">
+    <summary>Sources &amp; further reading</summary>
+    <ol>
+      <li><a href="https://disclosures.utah.gov/Search/PublicSearch/FolderDetails/1414516">Lisonbee folder, disclosures.utah.gov</a>: Conflict of Interest forms filed Jan. 9, 2025 and Jan. 5, 2026 (read Nov. 26, 2026); campaign report exports for 2022, 2023 and 2025 (read Oct. 8, 2026) and for 2018&ndash;2021 and 2024 from her 2018, 2020 and 2022 House-14 folders (read Nov. 26, 2026)</li>
+      <li>Utah Division of Corporations business records: Wasatch International Adoptions; Family Connection Center, Inc. (record screens captured June 2026), <a href="https://businessregistration.utah.gov/">businessregistration.utah.gov</a></li>
+      <li><a href="https://house.utleg.gov/rep/LISONK/">Rep. Lisonbee's Utah House page</a> (committees, service date, profile)</li>
+      <li>2026 bill texts and status pages, le.utah.gov: H.B. 50, H.B. 372, H.B. 370, H.B. 48, H.B. 20, H.B. 23, H.C.R. 10, H.B. 480, H.B. 234; S.B. 233 (S01 comparison). Votes from LegiScan. Bills were read in October 2026 through summaries of the bill PDFs; H.B. 20 from its first substitute.</li>
+      <li>Fiscal notes: <a href="https://pf.utleg.gov/public-web/sessions/2026GS/fiscal-notes/HB0370S01.fn.html">H.B. 370 S01</a>; <a href="https://pf.utleg.gov/public-web/sessions/2026GS/fiscal-notes/HB0020S01.fn.html">H.B. 20 S01</a>; <a href="https://pf.utleg.gov/public-web/sessions/2026GS/fiscal-notes/HCR010.fn.html">H.C.R. 10</a></li>
+      <li><a href="https://news.ballotpedia.org/2026/06/24/incumbent-blake-moore-r-defeated-karianne-lisonbee-r-in-the-republican-primary-for-utahs-2nd-congressional-district/">Ballotpedia News (June 24, 2026)</a>; <a href="https://www.ksl.com/article/51538315/gop-incumbents-moore-maloy-fend-off-challengers-mcadams-wins-democratic-primary">KSL</a>; <a href="https://utahnewsdispatch.com/?p=18190">Utah News Dispatch</a></li>
+    </ol>
+  </details>
+
+</div>
+<div class="hbx-shelfwrap"><div class="in"><div class="hbx-shelf" id="hbx-shelf"></div></div></div>
+<div class="hb-foot"><img src="hive-bee.png" alt=""><span class="hb-name">Utah Hive Politics</span><span class="hb-sub">from the publisher of The Weber County Hive</span><span class="hb-tag">Independent &middot; Accountability &middot; Journalism</span><p class="hb-line">The Weber County Hive and Utah Hive Politics: the people's publication. We investigate what's best for the public as a whole, not for any party or special interest group. We report public records. You decide.</p><p class="hb-tips"><a class="hb-btn" href="https://weber-county-hive.github.io/-weber-county-hive-index/tips.html#send">Send a tip</a><a class="hb-btn hb-btn2" href="https://weber-county-hive.github.io/-weber-county-hive-index/tips.html">Tips we checked</a><a class="hb-btn hb-btn2" href="https://weber-county-hive.github.io/-weber-county-hive-index/tips.html#send">See a mistake? Tell us</a></p><p class="hb-small">The Weber County Hive · Accountability journalism for Weber County and beyond</p><p class="hb-small">We never name tipsters. When we correct a page, the fix and its date are shown on the page.</p><p class="hb-small"><a href="index.html">Utah House Directory</a> · <a href="https://weber-county-hive.github.io/-weber-county-hive-index/">Master Index (Hive library)</a> · <a href="https://webercountyhive.substack.com/">Read on Substack</a></p></div>
+<script src="uh-shelf.js?v=1"></script>
+
+<script data-goatcounter="https://weberhive.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
+<script>document.querySelectorAll('.flip').forEach(function(f){f.addEventListener('click',function(){f.setAttribute('aria-expanded',f.getAttribute('aria-expanded')==='true'?'false':'true');});});</script>
+<script type="module">import mermaid from "https://cdn.jsdelivr.net/npm/mermaid@10.9.1/dist/mermaid.esm.min.mjs"; mermaid.initialize({startOnLoad:true,theme:"base",themeVariables:{fontSize:"20px",fontFamily:"Arial",primaryColor:"#e6f1ee",primaryBorderColor:"#264653",primaryTextColor:"#264653",lineColor:"#264653"},flowchart:{useMaxWidth:true,htmlLabels:true}});</script>
+</body>
+</html>

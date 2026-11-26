@@ -21,6 +21,11 @@ var HBX = {
       "callNumber": "UH 100.02",
       "slug": "weber-hive-christofferson",
       "name": "Rep. Kay J. Christofferson (House District 53)"
+    },
+    {
+      "callNumber": "UH 100.03",
+      "slug": "weber-hive-lisonbee",
+      "name": "Rep. Karianne Lisonbee (House District 14)"
     }
   ],
   "shelves": {

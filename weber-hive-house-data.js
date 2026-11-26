@@ -24,5 +24,15 @@ const REPRESENTATIVES = [
     tags: ["Transportation Chair", "Wayne Harper Network", "Federalism Commission", "Midnight Kill", "Election Hive"],
     status: "live",
     link: "weber-hive-christofferson.html"
+  },
+  {
+    id: "lisonbee",
+    name: "Rep. Karianne Lisonbee",
+    district: "House District 14 (Davis County)",
+    role: "House Judiciary and House Education committees · Did not seek re-election in 2026",
+    summary: "Two nonprofit board seats on her 2025 conflict of interest form are not on her 2026 form. Nine 2026 bills, seven signed, with cost notes. Her largest 2025 campaign payee is listed only as \"Campaign Expense.\"",
+    tags: ["House Judiciary", "COI Form Change", "Child Welfare Bills", "Kyle Palmer"],
+    status: "live",
+    link: "weber-hive-lisonbee.html"
   }
 ];
