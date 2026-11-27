@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Rep. Mike Schultz — Utah House Directory</title>
+<style>
+  :root {
+    --cream: #f7f3e8;
+    --cream-dark: #e6f1ee;
+    --teal-dark: #264653;
+    --teal-soft: #3d6470;
+    --turquoise: #2a9d8f;
+    --turquoise-dark: #1f7a6e;
+    --yellow: #e9c46a;
+    --yellow-dark: #b9861f;
+    --coral: #e76f51;
+    --green: #588157;
+    --border: #cfe3de;
+    --good: #588157;
+    --bad: #e76f51;
+    --mixed: #b9861f;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background: var(--cream);
+    color: var(--teal-dark);
+    font-family: Georgia, 'Iowan Old Style', 'Times New Roman', serif;
+    line-height: 1.65;
+  }
+  .wrap { max-width: 820px; margin: 0 auto; padding: 0 24px 80px; }
+
+  header.masthead {
+    background: var(--teal-dark);
+    color: var(--cream);
+    padding: 40px 24px 34px;
+    border-bottom: 6px solid var(--turquoise);
+  }
+  header.masthead .inner { max-width: 820px; margin: 0 auto; }
+  .back-link { color: var(--turquoise); font-size: 0.85rem; text-decoration: none; }
+  .case-label {
+    display: inline-block;
+    font-family: 'Courier New', monospace;
+    letter-spacing: 0.08em;
+    font-size: 0.78rem;
+    color: var(--turquoise);
+    border: 1px solid var(--turquoise-dark);
+    padding: 3px 10px;
+    border-radius: 3px;
+    margin: 14px 0 16px;
+    text-transform: uppercase;
+  }
+  h1.headline { font-size: 2rem; line-height: 1.2; margin: 0 0 8px; font-weight: 700; }
+  p.subtitle { font-size: 1.05rem; color: var(--cream-dark); margin: 0 0 18px; }
+  p.dek { font-size: 1.1rem; color: var(--cream-dark); font-style: italic; margin: 0 0 18px; max-width: 640px; }
+  .byline-row { display: flex; flex-wrap: wrap; gap: 18px; font-size: 0.85rem; color: var(--cream-dark); border-top: 1px solid rgba(245,240,228,0.2); padding-top: 14px; }
+
+  .lede { font-size: 1.15rem; margin: 34px 0 8px; }
+  .lede::first-letter { font-size: 3.2rem; float: left; line-height: 0.85; padding-right: 8px; padding-top: 4px; color: var(--turquoise-dark); font-weight: 700; }
+
+  h2.section { margin-top: 46px; font-size: 1.5rem; border-bottom: 3px solid var(--turquoise); padding-bottom: 8px; }
+  h3.subsection { margin-top: 26px; font-size: 1.1rem; color: var(--turquoise-dark); }
+  p { margin: 14px 0; }
+  a { color: var(--turquoise-dark); }
+
+  .box { background: #fffdf7; border: 1px solid var(--border); border-radius: 6px; padding: 18px 22px; margin: 22px 0; }
+  .box.caution { border-color: var(--bad); background: #fbf1ee; }
+  .box.caution .box-label { color: var(--bad); }
+  .box.link-forward { border-color: var(--yellow-dark); background: #fbf3e0; }
+  .box.link-forward .box-label { color: var(--yellow-dark); }
+  .box-label { text-transform: uppercase; letter-spacing: 0.06em; font-size: 0.78rem; font-weight: 700; color: var(--turquoise-dark); margin-bottom: 8px; }
+
+  table.coi { width: 100%; border-collapse: collapse; margin: 16px 0; font-size: 0.92rem; }
+  table.coi th, table.coi td { border: 1px solid var(--border); padding: 8px 10px; text-align: left; vertical-align: top; }
+  table.coi th { background: var(--teal-dark); color: var(--cream); font-weight: 600; }
+  table.coi tr:nth-child(even) td { background: var(--cream-dark); }
+  table.coi td.finding { background: #e9f0e3; font-weight: 700; color: var(--teal-dark); }
+
+  .timeline { margin: 24px 0; }
+  .tl-item { position: relative; padding: 4px 0 22px 26px; border-left: 3px solid var(--turquoise); margin-left: -3px; }
+  .tl-item:last-child { border-left: 3px solid transparent; }
+  .tl-item::before { content: ''; position: absolute; left: -9px; top: 4px; width: 14px; height: 14px; border-radius: 50%; background: var(--cream); border: 3px solid var(--turquoise-dark); }
+  .tl-date { font-family: 'Courier New', monospace; font-weight: 700; color: var(--turquoise-dark); font-size: 0.88rem; }
+  .tl-title { font-weight: 700; margin: 3px 0 4px; }
+  .tl-body { font-size: 0.94rem; color: var(--teal-soft); }
+
+  .compare { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin: 18px 0; }
+  @media (max-width: 620px) { .compare { grid-template-columns: 1fr; } }
+  .compare-col { border-radius: 6px; padding: 14px 16px; font-size: 0.93rem; }
+  .compare-col.his-words { background: var(--cream-dark); border: 1px solid var(--border); }
+  .compare-col.record { background: #fbf1ee; border: 1px solid var(--bad); }
+  .compare-label { font-weight: 700; text-transform: uppercase; font-size: 0.72rem; letter-spacing: 0.05em; margin-bottom: 6px; display: block; }
+  .compare-col.his-words .compare-label { color: var(--turquoise-dark); }
+  .compare-col.record .compare-label { color: var(--bad); }
+
+  .grade-wrap { margin: 20px 0; }
+  details.grade-card { background: #fffdf7; border: 1px solid var(--border); border-radius: 6px; margin-bottom: 12px; overflow: hidden; }
+  details.grade-card summary {
+    cursor: pointer; padding: 14px 100px 14px 18px; font-weight: 700;
+    display: flex; justify-content: space-between; align-items: center;
+    list-style: none; position: relative;
+  }
+  details.grade-card summary::-webkit-details-marker { display: none; }
+  details.grade-card summary::after {
+    content: '▸ tap to expand'; position: absolute; right: 16px; top: 50%;
+    transform: translateY(-50%); font-size: 0.72rem; font-weight: 400;
+    font-style: italic; color: var(--turquoise-dark); white-space: nowrap;
+  }
+  details.grade-card[open] summary::after { content: '▾ tap to collapse'; }
+  .grade-pill {
+    font-family: 'Courier New', monospace; font-size: 0.82rem; font-weight: 700;
+    padding: 2px 11px; border-radius: 3px; color: #fff; margin-left: 10px;
+  }
+  .grade-card-body { padding: 0 18px 16px; font-size: 0.94rem; }
+  .grade-card-body .row { margin-bottom: 8px; }
+  .grade-card-body .row b { color: var(--turquoise-dark); }
+  .grade-card-body .row.fix {
+    margin-top: 14px; background: #eaf1e5; border: 1px solid var(--green);
+    border-left: 4px solid var(--green); border-radius: 4px;
+    padding: 12px 14px 12px 40px; position: relative;
+  }
+  .grade-card-body .row.fix::before {
+    content: '✓'; position: absolute; left: 12px; top: 12px; width: 20px; height: 20px;
+    background: var(--green); color: #fff; border-radius: 50%; font-size: 0.75rem;
+    font-weight: 700; display: flex; align-items: center; justify-content: center;
+  }
+  .grade-card-body .row.fix b {
+    color: var(--green); text-transform: uppercase; font-size: 0.78rem;
+    letter-spacing: 0.03em; display: block; margin-bottom: 4px;
+  }
+  .rubric-intro { font-size: 0.95rem; color: var(--teal-soft); margin-bottom: 18px; }
+
+  details.sources { margin-top: 40px; border-top: 2px solid var(--teal-dark); padding-top: 12px; }
+  details.sources summary { cursor: pointer; font-weight: 700; color: var(--turquoise-dark); font-size: 0.95rem; }
+  details.sources ol { font-size: 0.9rem; color: var(--teal-soft); padding-left: 20px; }
+  details.sources li { margin-bottom: 8px; }
+
+  footer.site { text-align: center; font-size: 0.82rem; color: var(--teal-soft); margin-top: 60px; padding-top: 20px; border-top: 1px solid var(--border); }
+
+  @media (max-width: 600px) { h1.headline { font-size: 1.5rem; } }
+.hbx-top{margin:0}
+.hb-bar{background:#0d0b0a;border-bottom:1px solid #3a2f1c;padding:10px 20px}
+.hb-bar a{display:flex;align-items:center;gap:12px;max-width:1100px;margin:0 auto;text-decoration:none}
+.hb-bar img{width:52px;height:52px;border-radius:4px;display:block;flex:none}
+.hb-name{font-family:'Cinzel','Trajan Pro',Georgia,serif;color:#d4af37;font-size:16px;letter-spacing:.14em;text-transform:uppercase;line-height:1.2;display:block}
+.hb-sub{font-family:Georgia,serif;font-style:italic;color:#b8956a;font-size:12.5px;display:block;margin-top:2px}
+.hb-line-top{font-family:Georgia,serif;color:#e8d9b5;font-size:12.5px;display:block;margin-top:3px;line-height:1.4}
+.hbx-slim{background:#0e2438;color:#dbe7f0;font:600 14px/1.4 Arial,sans-serif;padding:7px 20px;display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap}
+.hbx-slim a{color:#F3E3B3;text-decoration:underline}
+.hb-foot{background:#0d0b0a;color:#b8956a;text-align:center;padding:26px 20px 30px;font-family:Georgia,serif;line-height:1.5}
+.hb-foot img{width:52px;height:52px;display:block;margin:0 auto 10px}
+.hb-foot .hb-name,.hb-foot .hb-sub{display:block}
+.hb-foot .hb-tag{font-size:10.5px;letter-spacing:.2em;text-transform:uppercase;color:#8a7650;margin-top:8px;display:block}
+.hb-line{max-width:720px;margin:14px auto 0;color:#e8d9b5;font-size:15.5px;line-height:1.5}
+.hb-tips{margin:16px 0 4px;display:flex;gap:10px;justify-content:center;flex-wrap:wrap}
+.hb-btn{display:inline-block;border:2px solid #d4af37;background:#d4af37;color:#0d0b0a!important;font:700 15px Georgia,serif;padding:10px 18px;border-radius:6px;text-decoration:none!important}
+.hb-btn2{background:transparent;color:#d4af37!important}
+.hb-small{font-size:12.5px;color:#8a7650;margin:6px 0 0}
+.hb-small a{color:#d4af37;text-decoration:underline}
+.hb-foot p{max-width:720px;margin-left:auto!important;margin-right:auto!important}
+.hbx-tools{max-width:980px;margin:14px auto 4px;padding:0 20px;display:flex;flex-wrap:wrap;gap:8px;align-items:flex-start;font-family:Arial,sans-serif;position:relative;z-index:2}
+.hbx-tool{display:inline-block;font:700 15px Arial,sans-serif;color:#13233F!important;background:#fff;border:1px solid #c8cfd6;border-radius:6px;padding:9px 13px;text-decoration:none!important;cursor:pointer;line-height:1.2}
+.hbx-tool:hover{border-color:#13233F}.hbx-cnchip b{color:#1f5f9e;font-family:ui-monospace,Menlo,monospace}
+.hbx-jump{flex-basis:100%;order:5;border:1px solid #c8cfd6;border-radius:6px;background:#fff;color:#13233F}.hbx-jump summary{cursor:pointer;padding:9px 13px;font:700 15px Arial,sans-serif}
+.hbx-jump ol{margin:0;padding:4px 16px 12px 36px}.hbx-jump li{margin:6px 0;font-size:16.5px}.hbx-jump a{color:#13233F}
+.hbx-shelfwrap{background:#0e2438;color:#dbe7f0;padding:26px 20px 30px;font:16px/1.5 Arial,sans-serif;margin-top:48px;position:relative;z-index:1}
+.hbx-shelfwrap .in{max-width:900px;margin:0 auto}
+.hbx-shelf{border:2px dashed #9fd0ee;border-radius:10px;padding:16px 18px}
+.hbx-cn-big{font:600 17px ui-monospace,Menlo,monospace;margin-bottom:12px;color:#fff}.hbx-cn-big b{color:#9fd0ee}
+.hbx-nav{display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap;margin-bottom:12px}
+.hbx-nav-btn{flex:1;min-width:220px;background:#12304a;border:1px solid #4d86ad;border-radius:8px;padding:12px 14px;color:#fff!important;text-decoration:none!important;font-size:16px}.hbx-nav-btn b{color:#9fd0ee;font-family:ui-monospace,Menlo,monospace}.hbx-off{opacity:.5}
+.hbx-list summary{cursor:pointer;font-weight:700;padding:6px 0}.hbx-list ol{list-style:none;margin:6px 0 0;padding:0}.hbx-list li{padding:6px 0;border-bottom:1px solid #2b4a63}.hbx-list a{color:#fff!important;text-decoration:none}
+.hbx-shelf-head{color:#9fd0ee;font:600 13px ui-monospace,Menlo,monospace;letter-spacing:.1em}.hbx-cn{font-family:ui-monospace,Menlo,monospace;color:#9fd0ee;margin-right:6px}
+.hbx-find{margin:14px 0 4px}.hbx-find label{display:block;font-weight:700;margin-bottom:6px}.hbx-find div{display:flex;gap:8px;flex-wrap:wrap}.hbx-find input{flex:1;min-width:0;width:100%;padding:12px 14px;font-size:17px;border:2px solid #4d86ad;border-radius:6px;color:#13233F;background:#fff}.hbx-find button{padding:12px 18px;font-size:16px;font-weight:700;background:#9fd0ee;color:#0e2438;border:0;border-radius:6px;cursor:pointer}
+.hbx-search{font-size:15px;margin-top:12px}.hbx-search a,.hbx-search b{color:#9fd0ee}
+.hbx-totop{display:none;position:fixed;right:16px;bottom:16px;z-index:50;background:#0e2438;color:#fff!important;border:2px solid #9fd0ee;border-radius:24px;padding:10px 16px;font:700 15px Arial,sans-serif;text-decoration:none!important;box-shadow:0 2px 8px rgba(0,0,0,.25)}
+.hbx-dates{font-family:ui-monospace,Menlo,monospace;font-size:13px}
+@media(max-width:600px){.hb-bar img{width:38px;height:38px}.hb-line-top{font-size:11.5px}}
+@media print{.hbx-tools,.hbx-totop{display:none}}
+.wrap+.hbx-shelfwrap{margin-top:0}
+.hbx-dates{color:#cfe3de;margin:12px 0 0}
+.hb-foot p{max-width:720px;margin-left:auto!important;margin-right:auto!important}
+.hbx-shelfwrap+.hb-foot{margin-top:0}
+</style>
+<style>
+.plain-box{background:#f7f3e8;border:2px dashed #b9861f}
+.note{font:14px Arial,sans-serif;color:#3d6470}
+.mermaidbox{background:#fff;border:2px solid #cfe3de;border-radius:6px;padding:12px;margin:14px 0}
+pre.mermaid{margin:0;font-size:20px;text-align:center}
+.bars{margin:12px 0}.bar{display:grid;grid-template-columns:70px 1fr 160px;gap:10px;align-items:center;margin:6px 0;font:15px Arial,sans-serif}
+.bar .t{background:#e6f1ee;height:26px;border-radius:4px;overflow:hidden}.bar .f{background:#264653;height:100%}.bar .f.g{background:#e9c46a}.bar .v{text-align:right;font-weight:700}
+.flips{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px}
+.flip{text-align:left;background:#e6f1ee;border:1px solid #cfe3de;border-top:5px solid #264653;padding:14px 16px;cursor:pointer;font:inherit;color:inherit;min-height:96px}
+.flip .ft{font-weight:bold;font-size:1.05rem}.flip .fh{font:13px Arial,sans-serif;margin-top:6px}.flip .fd{display:none;margin-top:8px}
+.flip[aria-expanded="true"] .fd{display:block}.flip[aria-expanded="true"] .fh{display:none}
+.counter{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:10px}.counter div{background:#264653;color:#fff;padding:14px;text-align:center;border-radius:6px}.counter .n{font:700 1.8rem Arial,sans-serif;color:#e9c46a}.counter .l{font-size:.88rem}
+.stats-row{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:10px;margin:10px 0}.stats-row div{background:#264653;color:#fff;padding:14px;text-align:center;border-radius:6px}.stats-row b{display:block;font:700 1.6rem Arial,sans-serif;color:#e9c46a}.stats-row span{font-size:.9rem}
+@media(max-width:600px){.bar{grid-template-columns:50px 1fr 120px;font-size:13px}}
+</style>
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
+</head>
+<body>
+<div class="hbx-top"><div class="hb-bar"><a href="https://webercountyhive.substack.com/" target="_blank" rel="noopener"><img src="uhp-badge.png" alt="Utah Hive Politics logo"><span><span class="hb-name">Utah Hive Politics</span><span class="hb-sub">from the publisher of The Weber County Hive</span><span class="hb-line-top">The people's publication. We investigate what's best for the public as a whole, not any party or special interest.</span></span></a></div>
+<div class="hbx-slim"><span>Utah-House · UH 100.05</span><span><a href="https://weber-county-hive.github.io/-weber-county-hive-index/">← Hive library (every repo)</a></span></div></div>
+
+<header class="masthead">
+  <div class="inner">
+    <a href="index.html" class="back-link">&larr; Utah House Directory</a>
+    <div class="case-label">House District 12 · Profile</div>
+    <h1 class="headline">Rep. Mike Schultz</h1>
+    <p class="subtitle">Speaker of the House · Executive Appropriations · Legislative Management</p>
+    <p class="dek">Speaker of the House, in office since 2015. His form lists 25 entries he owns or helps run. Lines on his reports labeled as donations total $258,875. Re-elected Nov. 3.</p>
+    <div class="byline-row"><span>The Weber County Hive</span><span>Hooper / West Weber and west Davis</span><span>In office since January 1, 2015</span></div>
+    <p class="hbx-dates">Posted Nov. 26, 2026 · Updated Nov. 26, 2026</p>
+  </div>
+</header>
+<div class="wrap">
+  <div class="box plain-box"><div class="box-label">In plain words</div><p style="margin:0;">Schultz has represented Utah House District 12 (Hooper / West Weber and west Davis). He began serving January 1, 2015. This page shows what his own forms, bills and campaign reports say.</p></div>
+
+  <h2 class="section">Where he serves</h2>
+  <div id="pmap" style="height:420px;border:3px solid #264653;border-radius:8px" role="img" aria-label="Map of House District 12"></div>
+  <p class="note">House District 12 was drawn from the 2020 Census to hold about 43,622 people. <b>Whole cities and towns:</b> Hooper (9,087). <b>Part of:</b> Roy, Clinton, West Haven, West Point. Town numbers are each whole town's 2020 Census count. Map lines: Utah UGRC.</p>
+
+  <h2 class="section">The Basics</h2>
+  <table class="coi">
+    <tr><th>Office</th><td>Utah House District 12 (Davis, Weber counties). Republican. Service began January 1, 2015 (Legislature roster).</td></tr>
+    <tr><th>2026 committees</th><td>Executive Appropriations Committee; House Business, Labor, and Commerce Committee; House Natural Resources, Agriculture, and Environment Committee; Business and Labor Interim Committee; Natural Resources, Agriculture, and Environment Interim Committee; Legislative Audit Subcommittee; House Legislative Expenses Oversight Committee; Legislative Management Committee; Subcommittee on Oversight (Legislature roster).</td></tr>
+    <tr><th>Profession</th><td>Agriculture (Legislature roster).</td></tr>
+    <tr><th>2026 election</th><td>Re-elected Nov. 3, 2026. Mike Schultz 7,595 (57.61%); Anna Graff 5,588 (42.39%) (state election results site, count as of Nov. 20, 2026).</td></tr>
+  </table>
+
+  <h2 class="section">The Conflict-of-Interest Form</h2>
+  <p>Utah legislators file a signed form each year listing employers, businesses they own or help run, income sources, board seats and household connections.</p>
+  <table class="coi"><tr><th>Item</th><th>What his most recent form lists</th></tr><tr><td>Employer</td><td>Sawmill Ranch LLC (farming and ranching, president)</td></tr><tr><td>Owner or officer (2A)</td><td>25 entities, including Castle Creek Homes LLC, CCH Finance LLC, Keller Cattle Corp, Sawmill Ranch LLC and Sawmill Ranch West, LLC, Mike Schultz Inc, Mike Schultz Construction Inc, apartment companies (Villas on Main, Pinnacle Highbury, Eastgate at Greyhawk, Avanti, Bria, Mirella, One West, Arlo, Farmington Station), hotel companies (Richland Hotel Partners, Kapolei Hotel Partners), CCH Aviation, T &amp; M Commercial Real Estate, Lakeview Farms 1, Bravada, Whitesides Place, Bria Holdings and the Mike Schultz Living Trust</td></tr><tr><td>Income of $5,000+ (3A)</td><td>Most of the same companies, plus Kapp Auto LLC, Legacy Crossing Apartments and Glacier Bank Inc</td></tr><tr><td>Stocks or bonds (4A)</td><td>Glacier Bank Inc; SCO; Nikola</td></tr><tr><td>Board seats (5A)</td><td>None</td></tr><tr><td>Spouse's employer (7A)</td><td>None listed</td></tr></table>
+  <div class="box"><div class="box-label">What changed between forms</div><p style="margin:0;">His Jan. 6, 2026 and Jan. 8, 2025 forms list the same entities.</p></div>
+  <p class="note">How these were read: the forms were opened on disclosures.utah.gov and read from the rendered web page text, Nov. 26, 2026. Home and business street addresses are left off this page.</p>
+  <div class="box"><div class="box-label">Bank ties on his forms</div>
+  <ul style="margin:0;">
+  <li><b>2015&ndash;2017:</b> His conflict of interest forms from 2015, 2016, 2017 and June 2017 list "FNB Bancorp &amp; Subsidiary" as a company he held shares in, and "First National Bank" as a board seat (Board of Directors, banking).</li>
+  <li><b>2019:</b> Glacier Bancorp's SEC filings show it bought FNB Bancorp of Layton on April 30, 2019. It paid almost all of the price in Glacier stock: $87.2 million in shares and about $4,000 in cash.</li>
+  <li><b>2022&ndash;2026:</b> Every form he filed on the state site in these years (Jan. 10, 2022; Jan. 13, 2023; Jan. 2 and Feb. 9, 2024; Jan. 7 and Jan. 8, 2025; Jan. 6, 2026) lists Glacier Bank Inc as an income source and a stock holding, each $5,000 or more. None lists a board seat.</li>
+  <li><b>What the records do not show:</b> The forms do not say how or when he got his Glacier stock, or how much he holds. The names match; the records in hand do not show that his Glacier stock came from the FNB Bancorp sale. His forms for 2018 through 2021 were not found on the state disclosure site (its forms for him start in 2022) or among the Legislature's posted PDFs (which stop at June 2017).</li>
+  </ul></div>
+  <p class="note">How these were read: the 2015&ndash;2017 forms are PDF files posted by the Legislature (le.utah.gov), read by text extraction and matched line by line on all four forms, Nov. 26, 2026. The 2022&ndash;2026 forms were opened on disclosures.utah.gov and read from the rendered page text, Nov. 26, 2026. The Glacier purchase figures are from Glacier Bancorp's 2019 SEC filings.</p>
+
+  <h2 class="section">His 2026 Bills</h2>
+  <p>He was the primary sponsor of 1 numbered bills or resolutions in the 2026 General Session; 1 passed. He was the House floor sponsor of 0 Senate bills and a co-sponsor of 4.</p>
+  <table class="coi"><tr><th>Bill</th><th>Title</th><th>Senate sponsor</th><th>Result</th></tr><tr><td><b>H.B. 274</b></td><td>Sentencing Amendments</td><td>McKell, Michael K.</td><td>Signed</td></tr></table>
+  
+  <p class="note">Titles and results from the Legislature's 2026 bill list for Schultz, read Nov. 26, 2026.</p>
+
+  <h2 class="section">Campaign Money, 2018&ndash;2026 (state House accounts)</h2>
+  <div class="stats-row"><div><b>$448,230.03</b><span>money in, 2018&ndash;2026</span></div><div><b>$405,837.36</b><span>spent, 2018&ndash;2026</span></div><div><b>588</b><span>transactions checked</span></div></div>
+  <div class="bars"><div class="bar"><span>2018</span><div class="t"><div class="f" style="width:36.7%"></div></div><span class="v">$52,501.00 in</span></div><div class="bar"><span></span><div class="t"><div class="f g" style="width:27.0%"></div></div><span class="v">$38,649.00 out</span></div><div class="bar"><span>2019</span><div class="t"><div class="f" style="width:12.5%"></div></div><span class="v">$17,900.00 in</span></div><div class="bar"><span></span><div class="t"><div class="f g" style="width:9.8%"></div></div><span class="v">$14,100.00 out</span></div><div class="bar"><span>2020</span><div class="t"><div class="f" style="width:41.3%"></div></div><span class="v">$59,115.46 in</span></div><div class="bar"><span></span><div class="t"><div class="f g" style="width:47.7%"></div></div><span class="v">$68,327.92 out</span></div><div class="bar"><span>2021</span><div class="t"><div class="f" style="width:13.8%"></div></div><span class="v">$19,819.83 in</span></div><div class="bar"><span></span><div class="t"><div class="f g" style="width:2.3%"></div></div><span class="v">$3,359.75 out</span></div><div class="bar"><span>2022</span><div class="t"><div class="f" style="width:30.6%"></div></div><span class="v">$43,820.00 in</span></div><div class="bar"><span></span><div class="t"><div class="f g" style="width:31.1%"></div></div><span class="v">$44,550.00 out</span></div><div class="bar"><span>2023</span><div class="t"><div class="f" style="width:30.5%"></div></div><span class="v">$43,700.00 in</span></div><div class="bar"><span></span><div class="t"><div class="f g" style="width:30.5%"></div></div><span class="v">$43,603.23 out</span></div><div class="bar"><span>2024</span><div class="t"><div class="f" style="width:78.6%"></div></div><span class="v">$112,573.74 in</span></div><div class="bar"><span></span><div class="t"><div class="f g" style="width:100.0%"></div></div><span class="v">$143,180.58 out</span></div><div class="bar"><span>2025</span><div class="t"><div class="f" style="width:17.9%"></div></div><span class="v">$25,700.00 in</span></div><div class="bar"><span></span><div class="t"><div class="f g" style="width:2.4%"></div></div><span class="v">$3,466.88 out</span></div><div class="bar"><span>2026</span><div class="t"><div class="f" style="width:51.1%"></div></div><span class="v">$73,100.00 in</span></div><div class="bar"><span></span><div class="t"><div class="f g" style="width:32.5%"></div></div><span class="v">$46,600.00 out</span></div></div>
+  <p class="note">Dark bars are money in; yellow bars are money out. Money in includes the candidate's own deposits. Money moved from his own older House accounts into newer ones ($73,496.41 in all) is counted once and left out of both totals. Election years have up to five reports; other years have a Year End report. 2026 runs through the General report; the 2026 Year End report is due in January 2027.</p>
+  <table class="coi">
+    <tr><th>2018&ndash;2026</th><th>From his filed reports</th></tr>
+    <tr><td>Largest donors</td><td>His own deposits, $95,500; Utah Association of Realtors, $23,000; Utah Hospac, $17,850; Altria Client Services, $10,500; "Democracy Engine," $9,484.29; Energy Solutions, $8,700; Utah Healthcare Association PAC Fund, $8,000; Farmers Employee Agent PAC, $7,373.74; Allstate and Select Health, $6,500 each; PAC Management Services DBA VIP Gatekeeper, $5,000.</td></tr>
+    <tr><td class="finding">Largest payees</td><td class="finding">Utah Republican Party, $40,975; GH4 Consulting, $37,223.34; Kyle Palmer, $33,150.58; Hooper City, $19,500; Irish Elk LLC, $14,000; In the Field LLC, $13,325; West Haven City, $10,000; G2 Consulting, $9,480.16; Catholic Community Services Food Bank, $7,500.</td></tr>
+    <tr><td>How spending is labeled</td><td>"Donations," $163,175; "Campaign Donation," $77,450; advertising, $67,333.13; "Campaign Expense," $47,057.90 (plus $5,000 as "Campaign Expenses"); "Donation," $18,250.</td></tr>
+  </table>
+  <ul><li>PAC Management Services DBA VIP Gatekeeper gave $5,000. Earlier Hive research found two recipients of VIPGateKeeper money in the records it searched: Schultz and Rep. Jason Thompson.</li><li><b>What "Democracy Engine" is:</b> Democracy Engine, LLC is a payment processing company in Washington, D.C. It collects donations made through its system and forwards them to campaigns and committees, keeping a fee. Business and trade-group PACs use it to collect donations from their employees or members. On his reports, the money shows as one $9,484.29 donor line under the company's name; the people who gave it are not named there.</li><li>His campaign paid Kyle Palmer $33,150.58 and Irish Elk LLC $14,000. The Hive's Ledger links Palmer and Irish Elk.</li><li>His form lists Glacier Bank Inc as an income source and a stock holding, each $5,000 or more. Glacier Bank is a division of Glacier Bancorp, a publicly traded bank company; its Utah divisions are Altabank (American Fork) and First Community Bank Utah (Layton). The form does not show the size of his holding (Glacier Bancorp SEC filings, 2019 and 2021 acquisitions).</li></ul>
+  <p>For how consultant payments appear on the state site, see <a href="https://weber-county-hive.github.io/Transparency/selling-the-vote.html#vendors">Selling the Vote</a>.</p>
+
+  <h2 class="section">Graded Against the Rubric</h2>
+  <p class="rubric-intro">Every finding is graded the same five ways used across Hive coverage: <b>Power</b>, <b>Transparency</b>, <b>Financial accountability</b>, <b>Environmental impact</b> and <b>Community impact</b>.</p>
+  <div class="grade-wrap">
+    <details class="grade-card" open><summary>The conflict of interest form</summary><div class="grade-card-body"><div class="row"><b>Power &mdash;</b> As Speaker, he leads the House. His form lists 25 entries he owns or helps run, in home building, apartments, hotels, ranching, finance and aviation.</div><div class="row"><b>Transparency &mdash;</b> His 2025 and 2026 forms list the same entries. Item 8A, for any other possible conflict, is blank.</div><div class="row"><b>Financial accountability &mdash;</b> The form lists sources, not amounts.</div><div class="row"><b>Environmental impact &mdash;</b> Not applicable.</div><div class="row"><b>Community impact &mdash;</b> His companies build homes and apartments. Housing and land-use bills come before the House he leads.</div><div class="row fix"><b>What could have been done differently</b>Item 8A is optional. A note there tying his companies to the subjects the House votes on would have put them side by side for readers.</div></div></details>
+    <details class="grade-card" open><summary>Campaign money</summary><div class="grade-card-body"><div class="row"><b>Power &mdash;</b> His own deposits were his largest source ($95,500). Realtors ($23,000), hospitals ($17,850), Altria ($10,500) and Energy Solutions ($8,700) were among the top outside donors.</div><div class="row"><b>Transparency &mdash;</b> $258,875 of his spending is labeled as donations to other candidates, parties and causes. "Democracy Engine," a payment processor, is listed as a $9,484.29 donor without the names behind it.</div><div class="row"><b>Financial accountability &mdash;</b> He paid Kyle Palmer $33,150.58 and Irish Elk LLC $14,000. $47,057.90 is labeled "Campaign Expense."</div><div class="row"><b>Environmental impact &mdash;</b> Not applicable.</div><div class="row"><b>Community impact &mdash;</b> Gifts to Hooper City ($19,500), West Haven City ($10,000) and the Catholic Community Services food bank ($7,500) are listed on his reports.</div><div class="row fix"><b>What could have been done differently</b>The "Democracy Engine" line could list the people whose money came through it. The state report has a purpose field for each payment. Filling it with what was bought (printing, texts, consulting) would answer what "Campaign Expense" paid for.</div></div></details>
+    <details class="grade-card" open><summary>2026 bills</summary><div class="grade-card-body"><div class="row"><b>Power &mdash;</b> As Speaker he sponsored one bill, H.B. 274 on sentencing. It passed.</div><div class="row"><b>Transparency &mdash;</b> H.B. 274's text and votes are public.</div><div class="row"><b>Financial accountability &mdash;</b> H.B. 274 lists no appropriation.</div><div class="row"><b>Environmental impact &mdash;</b> Not applicable.</div><div class="row"><b>Community impact &mdash;</b> H.B. 274 changes sentencing law.</div><div class="row fix"><b>What could have been done differently</b>Not applicable.</div></div></details>
+  </div>
+
+  <h2 class="section">Three Ways to Look at It</h2>
+  <h3 class="subsection">1. The auditor's look: do the records line up?</h3>
+  <ul>
+    <li><b>Reports were filed for each year shown</b> (2018&ndash;2026). The totals come from one pull on Nov. 26, 2026, with duplicate and deleted lines removed.</li>
+    <li>"Democracy Engine" is listed as a donor without the individual givers.</li><li>Transfers between his own accounts ($73,496.41 over 2018, 2020 and 2022) are counted once.</li><li>$47,057.90 is labeled only "Campaign Expense."</li>
+  </ul>
+  <h3 class="subsection">2. The collective rubric: is it good for everyone?</h3>
+  <p>See the grade cards above. Each card ends with what could have been done differently, based only on what the record leaves open.</p>
+  <h3 class="subsection">3. The Legislature's view: what the law asks, and how lawmakers voted</h3>
+  <ul>
+    <li><b>The form follows state law.</b> Utah Code 20A-11-1604 sets what goes on the conflict of interest form. It asks for sources, not amounts, and Item 8A is optional.</li>
+    <li><b>Campaign reports follow state law.</b> Each line shows a date, name, amount and a purpose label chosen by the campaign.</li>
+    <li>Utah Code 20A-11-1604 sets what goes on the form. It does not ask for amounts.</li><li>His one 2026 bill, H.B. 274, passed.</li>
+  </ul>
+
+  <h2 class="section">People Connected to the Record</h2>
+  <p>Being named here does not mean anyone did anything wrong.</p>
+  <table class="coi"><tr><th>Who</th><th>Why they are here</th><th>Other Hive pages</th></tr><tr><td><b>Kyle Palmer</b></td><td>Paid $33,150.58</td><td><a href="https://weber-county-hive.github.io/-weber-county-hive-ledger/follow-the-money-uwha.html">Election Hive and Irish Elk</a></td></tr><tr><td><b>Anna Graff</b></td><td>His 2026 opponent</td><td><a href="https://weber-county-hive.github.io/candidates2026/hd12-graff-schultz.html">HD-12 race file</a></td></tr></table>
+
+  <h2 class="section">Bills the Hive Has Researched That Name Him</h2>
+  <p>These Hive bill pages name Schultz, as a sponsor or in the recorded votes.</p>
+  <ul><li><a href="https://weber-county-hive.github.io/Bill-Tracker/weber-hive-hb491.html">CASE 2023-491-BSW</a> <span class="note">(Bill-Tracker; sponsor or co-sponsor)</span></li><li><a href="https://weber-county-hive.github.io/Bill-Tracker/water-land-property-rights-local-power-bills.html">Water, Land, Property Rights &amp; Local Power</a> <span class="note">(Bill-Tracker; sponsor or co-sponsor)</span></li><li><a href="https://weber-county-hive.github.io/Bill-Tracker/weber-hive-2025-hb2001.html">Repealed Before the Vote: The Union Referendum</a> <span class="note">(Bill-Tracker; named in the votes or text)</span></li><li><a href="https://weber-county-hive.github.io/committees/weberhivecommitteemidaprojectareas.html">Eight Project Areas</a> <span class="note">(committees; named in the votes or text)</span></li><li><a href="https://weber-county-hive.github.io/bait-and-switch/weber-hive-bait-and-switch.html">Bills That Did the Opposite</a> <span class="note">(bait-and-switch; named in the votes or text)</span></li><li><a href="https://weber-county-hive.github.io/Bill-Tracker/weber-hive-hb286.html">CASE 2026-286</a> <span class="note">(Bill-Tracker; named in the votes or text)</span></li><li><a href="https://weber-county-hive.github.io/Bill-Tracker/weber-hive-2024-sjr401.html">Amendment D: Six Weeks After the Ruling</a> <span class="note">(Bill-Tracker; named in the votes or text)</span></li><li><a href="https://weber-county-hive.github.io/committees/weber-hive-committee-federalism.html">Federalism Commission</a> <span class="note">(committees; named in the votes or text)</span></li><li><a href="https://weber-county-hive.github.io/Bill-Tracker/weber-hive-petition-laws-2016-2026.html">Ten Years of Petition Laws, 2016–2026</a> <span class="note">(Bill-Tracker; named in the votes or text)</span></li><li><a href="https://weber-county-hive.github.io/Bill-Tracker/weber-hive-2023-sb199.html">Two-Thirds, Then Unanimous: The Land Use Referendum Rule</a> <span class="note">(Bill-Tracker; named in the votes or text)</span></li><li><a href="https://weber-county-hive.github.io/Bill-Tracker/weber-hive-2023-hb188.html">The Golf Water Report That Never Came</a> <span class="note">(Bill-Tracker; named in the votes or text)</span></li><li><a href="https://weber-county-hive.github.io/Bill-Tracker/weber-hive-hb507.html">H.B. 507</a> <span class="note">(Bill-Tracker; named in the votes or text)</span></li></ul>
+
+  <h2 class="section">Connected Hive Work</h2>
+  <ul><li><a href="https://weber-county-hive.github.io/candidates2026/hd12-graff-schultz.html">2026 race file</a> &mdash; his 2026 race, money and form in the candidates2026 repo.</li><li><a href="https://weber-county-hive.github.io/followthedeed/weber-hive-schultz-water-rights.html">The Applicant Holds Those Rights</a> <span class="note">(followthedeed)</span></li><li><a href="https://weber-county-hive.github.io/Transparency/weber-hive-enforcement-gap.html">Utah's Campaign-Finance Enforcement Gap</a> <span class="note">(Transparency)</span></li><li><a href="https://weber-county-hive.github.io/-weber-county-hive-ledger/biggest-donors-flip.html">The Biggest Donors, So Far</a> <span class="note">(-weber-county-hive-ledger)</span></li><li><a href="https://weber-county-hive.github.io/Voter-Quick-Scan-2026/index.html">Voter Quick Scan</a> <span class="note">(Voter-Quick-Scan-2026)</span></li><li><a href="https://weber-county-hive.github.io/-weber-county-hive-ledger/marketing-in-utah-politics.html">Who Gets Paid to Sell You a Candidate</a> <span class="note">(-weber-county-hive-ledger)</span></li><li><a href="https://weber-county-hive.github.io/pac/house-speaker-leadership-pac.html">House Speaker Leadership PAC</a> <span class="note">(pac)</span></li><li><a href="https://weber-county-hive.github.io/Bill-Tracker/weber-hive-2025-hb2001.html">Repealed Before the Vote: The Union Referendum</a> <span class="note">(Bill-Tracker)</span></li></ul>
+
+  <h2 class="section">What We Don't Know Yet</h2>
+  <ul>
+    <li>What the lines labeled only "Campaign Expense" paid for.</li>
+    <li>What his 2026 Year End report will show (due January 2027).</li>
+  </ul>
+
+  <h2 class="section">Questions to Ask, and Whom to Ask</h2>
+  <p>Anyone can ask these. Each one names the office that keeps the record or makes the decision.</p>
+  <ol><li><b>Lieutenant Governor's Elections Office (runs disclosures.utah.gov):</b> Can the $9,484.29 listed from "Democracy Engine" be broken down into the people who gave it?</li><li><b>House Ethics Committee:</b> Should the form ask for the size of holdings, such as his Glacier Bank Inc stock, and not just whether they are over $5,000?</li><li><b>Hooper City and West Haven City:</b> What were the $19,500 and $10,000 from his campaign used for?</li></ol>
+
+  <h2 class="section">Words to Know</h2>
+  <div class="flips">
+    <button class="flip" aria-expanded="false"><div class="ft">Conflict of interest form</div><div class="fh">Tap to see</div><div class="fd">A yearly signed form where Utah officeholders list employers, businesses, board seats and household ties that might matter to their votes.</div></button>
+    <button class="flip" aria-expanded="false"><div class="ft">Primary sponsor</div><div class="fh">Tap to see</div><div class="fd">The legislator who introduces a bill and carries it in their own chamber.</div></button>
+    <button class="flip" aria-expanded="false"><div class="ft">Floor sponsor</div><div class="fh">Tap to see</div><div class="fd">The legislator who carries a bill in the other chamber.</div></button>
+    <button class="flip" aria-expanded="false"><div class="ft">Leadership PAC</div><div class="fh">Tap to see</div><div class="fd">A political committee run by or for legislative leaders that gives to other candidates.</div></button>
+  </div>
+
+  <h2 class="section">Behind This Piece</h2>
+  <div class="counter"><div><div class="n">588</div><div class="l">campaign transactions checked</div></div><div><div class="n">2</div><div class="l">conflict of interest forms read</div></div><div><div class="n">1</div><div class="l">2026 bills listed</div></div></div>
+
+  <details class="sources">
+    <summary>Sources &amp; further reading</summary>
+    <ol>
+      <li><a href="https://disclosures.utah.gov/Search/PublicSearch/FolderDetails/1412688">Schultz folder, disclosures.utah.gov</a>: campaign report downloads for every House account (read Nov. 26, 2026); two most recent conflict of interest forms (read Nov. 26, 2026)</li>
+      <li><a href="https://le.utah.gov/bills/billSearch.jsp?sess=2026GS&amp;disp=all&amp;rep=SCHULM">2026 bill list for Schultz, le.utah.gov</a></li>
+      <li><a href="https://house.utleg.gov/rep/SCHULM/">Schultz's Utah House page</a>; Legislature roster data (le.utah.gov)</li>
+      <li><a href="https://electionresults.utah.gov/results/public/Utah/General11032026">Utah 2026 General Election results</a> (count as of Nov. 20, 2026)</li>
+      <li>District lines: Utah UGRC, Utah House Districts 2022&ndash;2032; town lines and 2020 counts: Utah UGRC municipal boundaries</li>
+      <li>Schultz conflict of interest forms, 2015, 2016, 2017 and June 2017, posted by the Legislature: <a href="https://le.utah.gov/house2/CofI/mschultz.pdf">form 1</a>, <a href="https://le.utah.gov/house2/CofI/mschultz2.pdf">form 2</a>, <a href="https://le.utah.gov/house2/CofI/mschultz3.pdf">form 3</a>, <a href="https://le.utah.gov/house2/CofI/mschultz4.pdf">form 4</a> (read Nov. 26, 2026)</li>
+      <li>Glacier Bancorp SEC filings on the FNB Bancorp purchase (2019) and the Altabank purchase (2021), sec.gov</li>
+      <li><a href="https://democracyengine.com/how-it-works/">Democracy Engine, How Donations Work</a>; <a href="https://about.bgov.com/?p=8954">Bloomberg Government on Democracy Engine and business PACs</a></li>
+    </ol>
+  </details>
+</div>
+<div class="hbx-shelfwrap"><div class="in"><div class="hbx-shelf" id="hbx-shelf"></div></div></div>
+<div class="hb-foot"><img src="hive-bee.png" alt=""><span class="hb-name">Utah Hive Politics</span><span class="hb-sub">from the publisher of The Weber County Hive</span><span class="hb-tag">Independent &middot; Accountability &middot; Journalism</span><p class="hb-line">The Weber County Hive and Utah Hive Politics: the people's publication. We investigate what's best for the public as a whole, not for any party or special interest group. We report public records. You decide.</p><p class="hb-tips"><a class="hb-btn" href="https://weber-county-hive.github.io/-weber-county-hive-index/tips.html#send">Send a tip</a><a class="hb-btn hb-btn2" href="https://weber-county-hive.github.io/-weber-county-hive-index/tips.html">Tips we checked</a><a class="hb-btn hb-btn2" href="https://weber-county-hive.github.io/-weber-county-hive-index/tips.html#send">See a mistake? Tell us</a></p><p class="hb-small">The Weber County Hive · Accountability journalism for Weber County and beyond</p><p class="hb-small">We never name tipsters. When we correct a page, the fix and its date are shown on the page.</p><p class="hb-small"><a href="index.html">Utah House Directory</a> · <a href="https://weber-county-hive.github.io/-weber-county-hive-index/">Master Index (Hive library)</a> · <a href="https://webercountyhive.substack.com/">Read on Substack</a></p></div>
+<script src="uh-shelf.js?v=2"></script>
+
+<script data-goatcounter="https://weberhive.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
+<script>document.querySelectorAll('.flip').forEach(function(f){f.addEventListener('click',function(){f.setAttribute('aria-expanded',f.getAttribute('aria-expanded')==='true'?'false':'true');});});</script>
+<script type="module">import mermaid from "https://cdn.jsdelivr.net/npm/mermaid@10.9.1/dist/mermaid.esm.min.mjs"; mermaid.initialize({startOnLoad:true,theme:"base",themeVariables:{fontSize:"20px",fontFamily:"Arial",primaryColor:"#e6f1ee",primaryBorderColor:"#264653",primaryTextColor:"#264653",lineColor:"#264653"},flowchart:{useMaxWidth:true,htmlLabels:true}});</script>
+<script src="weber-hive-house-data.js?v=4"></script>
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+<script src="house-districts.js?v=1"></script>
+<script src="uh-map.js?v=1"></script>
+<script>uhMap("pmap", 12);</script>
+</body>
+</html>

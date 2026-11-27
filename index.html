@@ -205,6 +205,23 @@
 .uh-note{font:14px Arial,sans-serif;color:#3d6470}
 @media(max-width:600px){#uhMap{height:460px}.uh-lbl-in{font-size:11px;padding:2px 5px}}
 </style>
+<style id="lr-css">
+.lr-wrap{max-width:1000px;margin:22px auto 8px;padding:20px 22px;background:#fff;border:2px solid #264653;border-radius:10px;font-family:Georgia,serif;box-sizing:border-box}
+.lr-wrap h2{margin:0 0 4px;font-size:30px;color:#264653}.lr-wrap .lr-sub{font-size:18px;margin:0 0 14px;color:#333;line-height:1.5}
+.lr-change{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:10px;margin:0 0 14px}.lr-change div{background:#264653;color:#fff;padding:12px;text-align:center;border-radius:6px}.lr-change b{display:block;font:700 22px Arial,sans-serif}.lr-change span{font:15px Arial,sans-serif}
+.lr-map{height:520px;border:2px solid #264653;border-radius:8px;margin:6px 0 10px}
+.lr-legend{display:flex;flex-wrap:wrap;gap:16px;font:16px Arial,sans-serif;margin:0 0 10px}.lr-legend i{display:inline-block;width:18px;height:18px;border-radius:3px;margin-right:6px;vertical-align:-3px}.lr-legend .lr-newbox{border:3px solid #1d1d1d;background:#fff}
+.lr-tools{display:flex;flex-wrap:wrap;gap:10px;align-items:center;margin:10px 0}.lr-tools input{flex:1;min-width:220px;font-size:18px;padding:10px;border:2px solid #264653;border-radius:6px}
+.lr-pills button{font:16px Arial,sans-serif;padding:8px 12px;margin:2px;border:2px solid #264653;background:#fff;border-radius:20px;cursor:pointer}.lr-pills button.on{background:#264653;color:#fff}
+.lr-list{max-height:900px;overflow-y:auto;border-top:1px solid #ccc}
+.lr-row{display:flex;gap:14px;padding:14px 4px;border-bottom:1px solid #ddd}.lr-row.lr-flash{background:#fff6d6}
+.lr-dist{min-width:76px;text-align:center;border-left:6px solid #999;padding-left:8px;font:15px Arial,sans-serif}.lr-dist b{display:block;font-size:26px}
+.lr-body h3{margin:0;font-size:22px}.lr-party{font:14px Arial,sans-serif;color:#fff;padding:2px 8px;border-radius:10px;vertical-align:3px}.lr-party[style*="e9c46a"]{color:#222}
+.lr-new{font:700 14px Arial,sans-serif;background:#1d1d1d;color:#fff;padding:2px 8px;border-radius:10px;vertical-align:3px}
+.lr-note{margin:4px 0;font-size:18px}.lr-area,.lr-res{margin:4px 0;font-size:17px;line-height:1.5}.lr-prof{font:16px Arial,sans-serif}.lr-noprof{font:15px Arial,sans-serif;color:#666}
+.lr-src{font-size:15px;color:#444;margin:12px 0 0;line-height:1.5}
+@media(max-width:600px){.lr-map{height:380px}.lr-row{flex-direction:column}.lr-dist{text-align:left}}
+</style>
 </head>
 <body>
 <div class="hbx-top"><div class="hb-bar"><a href="https://webercountyhive.substack.com/" target="_blank" rel="noopener"><img src="uhp-badge.png" alt="Utah Hive Politics logo"><span><span class="hb-name">Utah Hive Politics</span><span class="hb-sub">from the publisher of The Weber County Hive</span><span class="hb-line-top">The people's publication. We investigate what's best for the public as a whole, not any party or special interest.</span></span></a></div>
@@ -223,6 +240,14 @@
 </header>
 
 <div class="wrap">
+  <section class="lr-wrap" id="roster-2027" aria-label="Who's in the Utah House, January 2027">
+  <h2>Who's in the Utah House, January 2027</h2>
+  <p class="lr-sub">All 75 House seats after the Nov. 3, 2026 election. In parentheses: who each new member replaces, or how long a returning member has served. Each House district was drawn from the 2020 Census to hold about 43,622 people (allowed range 41,440 to 45,803). Town numbers are each whole town's 2020 Census count. Tap a district on the map to jump to its member.</p>
+  <div class="lr-map" id="lrMapH" role="img" aria-label="Map of districts colored by party"></div>
+  <div id="lrRoster"></div>
+  <p class="lr-src"><b>Where this comes from:</b> winners, votes and margins from the state election results site (count as of Nov. 20, 2026); current members and service dates from the Legislature's roster (le.utah.gov); district and town lines from Utah UGRC; district target sizes from the Legislature's 2021 redistricting data report. Who will be sworn in can still change if a winner resigns or a seat is vacated before January.</p>
+</section>
+
   <section class="uh-mapwrap" id="map">
     <h2>Where each representative serves</h2>
     <p>Each outlined area is one representative's House district. The dashed line runs from the district to the name. Click a district or a name to see the cities and towns in it.</p>
@@ -254,6 +279,9 @@
 <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
 <script src="house-districts.js?v=1"></script>
 <script src="uh-map.js?v=1"></script>
+<script src="leg-roster-2027-data.js?v=1"></script>
+<script src="leg-roster.js?v=1"></script>
+<script>legRoster("lrRoster","lrMapH",HOUSE_DISTRICTS);</script>
 <script>uhMap("uhMap"); uhTable("uhTable");</script>
 <script>
   const container = document.getElementById('cardContainer');
