@@ -193,6 +193,18 @@
 .hb-foot p{max-width:720px;margin-left:auto!important;margin-right:auto!important}
 .hbx-shelfwrap+.hb-foot{margin-top:0}
 </style>
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
+<style>
+.uh-mapwrap{margin:0 0 28px}
+.uh-mapwrap h2{font-size:1.45rem;color:#264653;margin:0 0 6px}
+.uh-mapwrap p{margin:0 0 10px}
+#uhMap{height:760px;border:3px solid #264653;border-radius:8px}
+.uh-lbl-in{position:absolute;transform:translate(6px,-50%);white-space:nowrap;background:#fff;border:2px solid #264653;border-radius:6px;padding:3px 8px;font:700 14px Arial,sans-serif;color:#264653;cursor:pointer}
+.uh-lbl-in.uh-lbl-l{transform:translate(calc(-100% - 6px),-50%)}
+.uh-table{width:100%;border-collapse:collapse;margin:14px 0 6px;font-size:1rem}.uh-table th{background:#264653;color:#fff;text-align:left;padding:8px;font:700 14px Arial,sans-serif}.uh-table td{padding:8px;border-bottom:1px solid #cfe3de;vertical-align:top}
+.uh-note{font:14px Arial,sans-serif;color:#3d6470}
+@media(max-width:600px){#uhMap{height:460px}.uh-lbl-in{font-size:11px;padding:2px 5px}}
+</style>
 </head>
 <body>
 <div class="hbx-top"><div class="hb-bar"><a href="https://webercountyhive.substack.com/" target="_blank" rel="noopener"><img src="uhp-badge.png" alt="Utah Hive Politics logo"><span><span class="hb-name">Utah Hive Politics</span><span class="hb-sub">from the publisher of The Weber County Hive</span><span class="hb-line-top">The people's publication. We investigate what's best for the public as a whole, not any party or special interest.</span></span></a></div>
@@ -206,11 +218,19 @@
     </div>
     <h1 class="headline">Utah House Directory</h1>
     <p class="dek">Representative-by-representative profiles: committee seats, voting record, disclosed conflicts, and where their public record and their public messaging line up — or don't.</p>
-    <p class="hbx-dates">Posted Sept. 9, 2026 · Updated Oct. 11, 2026 · Page look updated Nov. 2, 2026</p>
+    <p class="hbx-dates">Posted Sept. 9, 2026 · Updated Nov. 26, 2026</p>
   </div>
 </header>
 
 <div class="wrap">
+  <section class="uh-mapwrap" id="map">
+    <h2>Where each representative serves</h2>
+    <p>Each outlined area is one representative's House district. The dashed line runs from the district to the name. Click a district or a name to see the cities and towns in it.</p>
+    <div id="uhMap" role="img" aria-label="Map of Utah House districts for the representatives profiled here"></div>
+    <div id="uhTable"></div>
+    <p class="uh-note">Every Utah House district was drawn from the 2020 Census to hold about 43,622 people. Town numbers are each whole town's 2020 Census count; a town marked "part of" is split between districts. District lines: Utah UGRC, 2022&ndash;2032 House districts. Town lines: Utah UGRC municipal boundaries.</p>
+  </section>
+
   <div class="search-bar">
     <input type="text" id="searchInput" placeholder="Search by name, district, role, tag, or keyword…" autocomplete="off">
     <span class="search-icon">&#128269;</span>
@@ -228,9 +248,13 @@
 
 <div class="hbx-shelfwrap"><div class="in"><div class="hbx-shelf" id="hbx-shelf"></div></div></div>
 <div class="hb-foot"><img src="hive-bee.png" alt=""><span class="hb-name">Utah Hive Politics</span><span class="hb-sub">from the publisher of The Weber County Hive</span><span class="hb-tag">Independent &middot; Accountability &middot; Journalism</span><p class="hb-line">The Weber County Hive and Utah Hive Politics: the people's publication. We investigate what's best for the public as a whole, not for any party or special interest group. We report public records. You decide.</p><p class="hb-tips"><a class="hb-btn" href="https://weber-county-hive.github.io/-weber-county-hive-index/tips.html#send">Send a tip</a><a class="hb-btn hb-btn2" href="https://weber-county-hive.github.io/-weber-county-hive-index/tips.html">Tips we checked</a><a class="hb-btn hb-btn2" href="https://weber-county-hive.github.io/-weber-county-hive-index/tips.html#send">See a mistake? Tell us</a></p><p class="hb-small">The Weber County Hive · Accountability journalism for Weber County and beyond</p><p class="hb-small">We never name tipsters. When we correct a page, the fix and its date are shown on the page.</p><p class="hb-small"><a href="index.html">Utah House Directory</a> · <a href="https://weber-county-hive.github.io/-weber-county-hive-index/">Master Index (Hive library)</a> · <a href="https://webercountyhive.substack.com/">Read on Substack</a></p></div>
-<script src="uh-shelf.js?v=1"></script>
+<script src="uh-shelf.js?v=2"></script>
 
-<script src="weber-hive-house-data.js?v=3"></script>
+<script src="weber-hive-house-data.js?v=4"></script>
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+<script src="house-districts.js?v=1"></script>
+<script src="uh-map.js?v=1"></script>
+<script>uhMap("uhMap"); uhTable("uhTable");</script>
 <script>
   const container = document.getElementById('cardContainer');
   const filterBar = document.getElementById('filterBar');

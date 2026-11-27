@@ -26,6 +26,66 @@ var HBX = {
       "callNumber": "UH 100.03",
       "slug": "weber-hive-lisonbee",
       "name": "Rep. Karianne Lisonbee (House District 14)"
+    },
+    {
+      "callNumber": "UH 100.04",
+      "slug": "weber-hive-thurston",
+      "name": "Rep. Norm Thurston (House District 62)"
+    },
+    {
+      "callNumber": "UH 100.05",
+      "slug": "weber-hive-schultz",
+      "name": "Rep. Mike Schultz (House District 12)"
+    },
+    {
+      "callNumber": "UH 100.06",
+      "slug": "weber-hive-kyle",
+      "name": "Rep. Jason Kyle (House District 8)"
+    },
+    {
+      "callNumber": "UH 100.07",
+      "slug": "weber-hive-shelley",
+      "name": "Rep. Troy Shelley (House District 66)"
+    },
+    {
+      "callNumber": "UH 100.08",
+      "slug": "weber-hive-ivory",
+      "name": "Rep. Ken Ivory (House District 39)"
+    },
+    {
+      "callNumber": "UH 100.09",
+      "slug": "weber-hive-macpherson",
+      "name": "Rep. Matt MacPherson (House District 26)"
+    },
+    {
+      "callNumber": "UH 100.10",
+      "slug": "weber-hive-loubet",
+      "name": "Rep. Anthony Loubet (House District 27)"
+    },
+    {
+      "callNumber": "UH 100.11",
+      "slug": "weber-hive-wilcox",
+      "name": "Rep. Ryan Wilcox (House District 7)"
+    },
+    {
+      "callNumber": "UH 100.12",
+      "slug": "weber-hive-sawyer",
+      "name": "Rep. Jake Sawyer (House District 9)"
+    },
+    {
+      "callNumber": "UH 100.13",
+      "slug": "weber-hive-hall",
+      "name": "Rep. Katy Hall (House District 11)"
+    },
+    {
+      "callNumber": "UH 100.14",
+      "slug": "weber-hive-bishop",
+      "name": "Rep. Rob Bishop (House District 6)"
+    },
+    {
+      "callNumber": "UH 100.15",
+      "slug": "weber-hive-gricius",
+      "name": "Rep. Stephanie Gricius (House District 50)"
     }
   ],
   "shelves": {
